@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9421D08B-C937-4CF6-B693-16DE20CBDD00}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SampleServiceHost</RootNamespace>
+    <AssemblyName>SampleServiceHost</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Mef.CommonServiceLocator">
+      <HintPath>..\packages\CommonServiceLocator.MefAdapter.1.0\lib\Microsoft.Mef.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\MefServiceHostHelper.cs" />
+    <Compile Include="MefRegistration.cs" />
+    <Compile Include="ServiceContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServiceContainer.Designer.cs">
+      <DependentUpon>ServiceContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Simple.Net.Core.Diagnostics.Loggers\Simple.Net.Core.Diagnostics.Loggers.csproj">
+      <Project>{b4e83cd6-10d4-45c0-b46b-6b556a8781c8}</Project>
+      <Name>Simple.Net.Core.Diagnostics.Loggers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.Net.Core.Diagnostics\Simple.Net.Core.Diagnostics.csproj">
+      <Project>{bdf95ac5-1331-4bd7-848f-03319d274fab}</Project>
+      <Name>Simple.Net.Core.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\Simple.Net.Core.ServiceHost.Contracts.csproj">
+      <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
+      <Name>Simple.Net.Core.ServiceHost.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.Net.Core.ServiceHost\Simple.Net.Core.ServiceHost.csproj">
+      <Project>{ac9ceea8-9f50-4c66-9af4-9a593385eacf}</Project>
+      <Name>Simple.Net.Core.ServiceHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\Simple.Net.DiagnosticService.Contracts.csproj">
+      <Project>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</Project>
+      <Name>Simple.Net.DiagnosticService.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.Net.DiagnosticService\Simple.Net.DiagnosticService.csproj">
+      <Project>{e1da6eff-29cd-4f1e-b2a5-395f303d94ae}</Project>
+      <Name>Simple.Net.DiagnosticService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleService.Contracts\SampleService.Contracts.csproj">
+      <Project>{b63f9e89-5a0f-4b75-917b-83f585d82169}</Project>
+      <Name>SampleService.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleService.Impl\SampleService.Impl.csproj">
+      <Project>{c1bce4a7-6473-442e-8da1-526afde4def9}</Project>
+      <Name>SampleService.Impl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
