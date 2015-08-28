@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection\BaseDatabaseConnection.cs" />
     <Compile Include="Connection\IDatabaseConnection.cs" />
-    <Compile Include="Connection\MsSqlConnection.cs" />
+    <Compile Include="Connection\GenericSqlConnectionProvider.cs" />
     <Compile Include="Helpers\DataTableHelper.cs" />
     <Compile Include="Helpers\SqlCommandHelper.cs" />
+    <Compile Include="Helpers\TraceHelper.cs" />
     <Compile Include="Mapper\IRowMapper.cs" />
     <Compile Include="Mapper\MapBuilder.cs" />
     <Compile Include="Mapper\ReflectionRowMapper.cs" />

@@ -1,24 +1,25 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Data.Common;
 
 namespace Simple.Net.Core.Data.Connection
 {
     public interface IDatabaseConnection : IDatabaseParameter
     {
-        String ConnectionString { get; }
-        
-        DbConnection GetNewConnection { get; }
+        string ConnectionString { get; }
+        string ProviderName { get; }
+
+        DbConnection GetNewConnection();
+        DbCommand GetNewCommand(DbConnection connection);
 
     }
 
 
     public interface IDatabaseParameter
     {
-
-        DbParameter GetSqlParameter(String name, Object value);
-
-        DbParameter GetSqlParameter(String name, Object value, SqlDbType sqlDbType);
+        DbParameter GetSqlParameter(string name, object value);
+        DbParameter GetSqlParameter(string name, object value, DbType dbType);
+        DbParameter GetSqlParameter(string name, object value, DbType dbType, ParameterDirection direction);
+        DbParameter GetSqlParameter(string name, object value, ParameterDirection direction);
 
     }
 

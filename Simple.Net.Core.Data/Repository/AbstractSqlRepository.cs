@@ -8,20 +8,20 @@ using Simple.Net.Core.Data.Helpers;
 
 namespace Simple.Net.Core.Data.Repository
 {
-    public class AbstractSqlRepository : IRepository
+    public abstract class AbstractSqlRepository : IRepository
     {
         /// <summary>
         /// override this in your Sql Repository Implementation.
         /// </summary>
-        public IDatabaseConnection SqlConnectionInfo { get; set; }
+        public abstract IDatabaseConnection SqlConnectionInfo { get; set; }
 
-
-        protected async Task<DataTable> ReadSqlAsync(String commandText, DbParameter[] parameters)
+        
+        protected async Task<DataTable> ReadSqlAsync(string commandText, DbParameter[] parameters)
         {
             return await ReadAsync(commandText, CommandType.Text, parameters);
         }
 
-        protected async Task<DataTable> ReadProcAsync(String commandText, DbParameter[] parameters)
+        protected async Task<DataTable> ReadProcAsync(string commandText, DbParameter[] parameters)
         {
             return await ReadAsync(commandText, CommandType.StoredProcedure, parameters);
         }
@@ -34,16 +34,16 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The records populated into a dataset/data table.</returns>
-        protected async Task<DataTable> ReadAsync(String commandText, CommandType commandType, DbParameter[] parameters)
+        protected async Task<DataTable> ReadAsync(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             var dataTable = new DataTable();
 
             try
             {
-                using (var connection = SqlConnectionInfo.GetNewConnection)
+                using (var connection = SqlConnectionInfo.GetNewConnection())
                 {
 
-                    using (var command = connection.CreateCommand())
+                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
                     {
                         command.CommandText = commandText;
                         command.CommandType = commandType;
@@ -80,6 +80,7 @@ namespace Simple.Net.Core.Data.Repository
                     }
                 }
 
+                ex.TraceException();
                 throw;
             }
 
@@ -88,7 +89,7 @@ namespace Simple.Net.Core.Data.Repository
 
 
 
-        
+
 
         /// <summary>
         /// Execute a read against the database and returns the dataset.
@@ -97,16 +98,16 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The records populated into a dataset/data table.</returns>
-        protected DataTable Read(String commandText, CommandType commandType, DbParameter[] parameters)
+        protected DataTable Read(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             var dataTable = new DataTable();
 
             try
             {
-                using (var connection = SqlConnectionInfo.GetNewConnection)
+                using (var connection = SqlConnectionInfo.GetNewConnection())
                 {
 
-                    using (var command = connection.CreateCommand())
+                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
                     {
                         command.CommandText = commandText;
                         command.CommandType = commandType;
@@ -143,6 +144,8 @@ namespace Simple.Net.Core.Data.Repository
                     }
                 }
 
+                ex.TraceException();
+
                 throw;
             }
 
@@ -156,17 +159,17 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The first value returned</returns>
-        protected async Task<Object> ExecuteScalarAsync(String commandText, CommandType commandType, DbParameter[] parameters)
+        protected async Task<object> ExecuteScalarAsync(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             object value;
 
             try
             {
-                using (var connection = SqlConnectionInfo.GetNewConnection)
+                using (var connection = SqlConnectionInfo.GetNewConnection())
                 {
 
 
-                    using (var command = connection.CreateCommand())
+                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
                     {
                         command.CommandText = commandText;
                         command.CommandType = commandType;
@@ -199,6 +202,8 @@ namespace Simple.Net.Core.Data.Repository
                         ex.Data.Add(parameter.ParameterName, parameter.Value);
                     }
                 }
+
+                ex.TraceException();
                 throw;
             }
 
@@ -213,17 +218,17 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The first value returned</returns>
-        protected Object ExecuteScalar(String commandText, CommandType commandType, DbParameter[] parameters)
+        protected object ExecuteScalar(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             object value;
 
             try
             {
 
-                using (var connection = SqlConnectionInfo.GetNewConnection)
+                using (var connection = SqlConnectionInfo.GetNewConnection())
                 {
 
-                    using (var command = connection.CreateCommand())
+                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
                     {
                         command.CommandText = commandText;
                         command.CommandType = commandType;
@@ -256,6 +261,8 @@ namespace Simple.Net.Core.Data.Repository
                         ex.Data.Add(parameter.ParameterName, parameter.Value);
                     }
                 }
+
+                ex.TraceException();
                 throw;
             }
 
@@ -271,17 +278,17 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The count of number of records affected.</returns>
-        protected int ExecuteNonQuery(String commandText, CommandType commandType, DbParameter[] parameters)
+        protected int ExecuteNonQuery(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             int value;
 
             try
             {
 
-                using (var connection = SqlConnectionInfo.GetNewConnection)
+                using (var connection = SqlConnectionInfo.GetNewConnection())
                 {
 
-                    using (var command = connection.CreateCommand())
+                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
                     {
                         command.CommandText = commandText;
                         command.CommandType = commandType;
@@ -314,6 +321,9 @@ namespace Simple.Net.Core.Data.Repository
                         ex.Data.Add(parameter.ParameterName, parameter.Value);
                     }
                 }
+
+
+                ex.TraceException();
                 throw;
             }
 
@@ -330,17 +340,17 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The count of number of records affected.</returns>
-        protected async Task<int> ExecuteNonQueryAsync(String commandText, CommandType commandType, DbParameter[] parameters)
+        protected async Task<int> ExecuteNonQueryAsync(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             int value;
 
             try
             {
 
-                using (var connection = SqlConnectionInfo.GetNewConnection)
+                using (var connection = SqlConnectionInfo.GetNewConnection())
                 {
 
-                    using (var command = connection.CreateCommand())
+                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
                     {
                         command.CommandText = commandText;
                         command.CommandType = commandType;
@@ -373,6 +383,8 @@ namespace Simple.Net.Core.Data.Repository
                         ex.Data.Add(parameter.ParameterName, parameter.Value);
                     }
                 }
+
+                ex.TraceException();
                 throw;
             }
 
@@ -387,27 +399,26 @@ namespace Simple.Net.Core.Data.Repository
         /// </summary>
         /// <param name="name"></param>
         /// <param name="value"></param>
-        /// <returns></returns>
-        protected DbParameter GetSqlParameter(String name, Object value)
+        protected DbParameter GetSqlParameter(string name, object value)
         {
             return SqlConnectionInfo.GetSqlParameter(name, value);
         }
 
-        /// <summary>
-        /// Helper method to retreive the SqlParameter
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="value"></param>
-        /// <param name="sqlDbType"></param>
-        /// <returns></returns>
-        protected DbParameter GetSqlParameter(String name, Object value, SqlDbType sqlDbType)
+        protected DbParameter GetSqlParameter(string name, object value, DbType dbType)
         {
-            return SqlConnectionInfo.GetSqlParameter(name, value, sqlDbType);
+            return SqlConnectionInfo.GetSqlParameter(name, value, dbType);
         }
 
+        protected DbParameter GetSqlParameter(string name, object value, DbType dbType, ParameterDirection direction)
+        {
+            return SqlConnectionInfo.GetSqlParameter(name, value, dbType, direction);
+        }
 
+        protected DbParameter GetSqlParameter(string name, object value, ParameterDirection direction)
+        {
+            return SqlConnectionInfo.GetSqlParameter(name, value, direction);
+        }
 
-        
         public void Dispose()
         {
         }
