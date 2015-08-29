@@ -2,7 +2,6 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using System.Reflection;
-using Simple.Net.Core.Data.Mapper;
 
 namespace Simple.Net.Core.Data.Utility
 {
