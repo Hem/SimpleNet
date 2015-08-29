@@ -46,7 +46,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{FE33
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E48A934D-E5CB-4070-B714-DD653918E728}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Net.Core.Data.UnitTest", "Sample.Net.Core.Data.UnitTest\Sample.Net.Core.Data.UnitTest.csproj", "{6646A9B8-68C2-41DF-8966-789D50A8A919}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.Core.Data.UnitTest", "Simple.Net.Core.Data.UnitTest\Simple.Net.Core.Data.UnitTest.csproj", "{6646A9B8-68C2-41DF-8966-789D50A8A919}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
