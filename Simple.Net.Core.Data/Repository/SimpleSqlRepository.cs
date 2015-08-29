@@ -1,29 +1,45 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 using Simple.Net.Core.Data.Connection;
 using Simple.Net.Core.Data.Helpers;
+using Simple.Net.Core.Data.Mapper;
+using Simple.Net.Core.Data.Repository.Contracts;
 
 namespace Simple.Net.Core.Data.Repository
 {
-    public abstract class AbstractSqlRepository : IRepository
+    public class SimpleDataAccess : ISimpleDataAccess
     {
         /// <summary>
         /// override this in your Sql Repository Implementation.
         /// </summary>
-        public abstract IDatabaseConnection SqlConnectionInfo { get; set; }
+        public ISimpleSqlConnectionProvider SqlConnectionInfo { get; set; }
 
-        
-        protected async Task<DataTable> ReadSqlAsync(string commandText, DbParameter[] parameters)
+
+        #region constructor
+        public SimpleDataAccess(string connectionName) : this(new SimpleSqlConnectionProvider(connectionName))
         {
-            return await ReadAsync(commandText, CommandType.Text, parameters);
+        }
+        public SimpleDataAccess(ISimpleSqlConnectionProvider connection)
+        {
+            SqlConnectionInfo = connection;
+        }
+        #endregion
+
+
+        #region ISyncDataAccess Layer
+
+        public DataTable ReadSql(string commandText, DbParameter[] parameters)
+        {
+            return Read(commandText, CommandType.Text, parameters);
         }
 
-        protected async Task<DataTable> ReadProcAsync(string commandText, DbParameter[] parameters)
+        public DataTable ReadProc(string commandText, DbParameter[] parameters)
         {
-            return await ReadAsync(commandText, CommandType.StoredProcedure, parameters);
+            return Read(commandText, CommandType.StoredProcedure, parameters);
         }
 
 
@@ -34,71 +50,7 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The records populated into a dataset/data table.</returns>
-        protected async Task<DataTable> ReadAsync(string commandText, CommandType commandType, DbParameter[] parameters)
-        {
-            var dataTable = new DataTable();
-
-            try
-            {
-                using (var connection = SqlConnectionInfo.GetNewConnection())
-                {
-
-                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
-                    {
-                        command.CommandText = commandText;
-                        command.CommandType = commandType;
-
-                        // Add parameters
-                        if (parameters != null)
-                        {
-                            command.Parameters.AddRange(parameters.ToArray());
-                        }
-
-                        var dr = await command.ExecuteReaderAsync();
-
-                        dataTable.Load(dr);
-
-                        command.Parameters.Clear();
-                    }
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                ex.Data.Add("CommandText", commandText);
-                ex.Data.Add("CommandType", commandType.ToString());
-
-                if (parameters != null)
-                {
-                    if (commandType == CommandType.StoredProcedure)
-                        ex.Data.Add("SqlCommand", parameters.FormatToExecuteProcedure(commandText));
-
-                    foreach (var parameter in parameters)
-                    {
-                        ex.Data.Add(parameter.ParameterName, parameter.Value);
-                    }
-                }
-
-                ex.TraceException();
-                throw;
-            }
-
-            return dataTable;
-        }
-
-
-
-
-
-        /// <summary>
-        /// Execute a read against the database and returns the dataset.
-        /// </summary>
-        /// <param name="commandText">The sql or procedure name to execute</param>
-        /// <param name="commandType">The command type</param>
-        /// <param name="parameters">An array || a list of parameters to pass to the command</param>
-        /// <returns>The records populated into a dataset/data table.</returns>
-        protected DataTable Read(string commandText, CommandType commandType, DbParameter[] parameters)
+        public DataTable Read(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             var dataTable = new DataTable();
 
@@ -152,63 +104,6 @@ namespace Simple.Net.Core.Data.Repository
             return dataTable;
         }
 
-        /// <summary>
-        /// Executes a command against the dataset and returns the first value received.
-        /// </summary>
-        /// <param name="commandText">The sql or procedure name to execute</param>
-        /// <param name="commandType">The command type</param>
-        /// <param name="parameters">An array || a list of parameters to pass to the command</param>
-        /// <returns>The first value returned</returns>
-        protected async Task<object> ExecuteScalarAsync(string commandText, CommandType commandType, DbParameter[] parameters)
-        {
-            object value;
-
-            try
-            {
-                using (var connection = SqlConnectionInfo.GetNewConnection())
-                {
-
-
-                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
-                    {
-                        command.CommandText = commandText;
-                        command.CommandType = commandType;
-
-                        // Add parameters
-                        if (parameters != null)
-                        {
-                            command.Parameters.AddRange(parameters.ToArray());
-                        }
-
-                        value = await command.ExecuteScalarAsync();
-
-                        command.Parameters.Clear();
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.Data.Add("CommandText", commandText);
-                ex.Data.Add("CommandType", commandType.ToString());
-
-                if (parameters != null)
-                {
-                    if (commandType == CommandType.StoredProcedure)
-                        ex.Data.Add("SqlCommand", parameters.FormatToExecuteProcedure(commandText));
-
-                    foreach (var parameter in parameters)
-                    {
-                        ex.Data.Add(parameter.ParameterName, parameter.Value);
-                    }
-                }
-
-                ex.TraceException();
-                throw;
-            }
-
-            return value;
-        }
 
 
         /// <summary>
@@ -218,7 +113,7 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The first value returned</returns>
-        protected object ExecuteScalar(string commandText, CommandType commandType, DbParameter[] parameters)
+        public object ExecuteScalar(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             object value;
 
@@ -278,7 +173,7 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The count of number of records affected.</returns>
-        protected int ExecuteNonQuery(string commandText, CommandType commandType, DbParameter[] parameters)
+        public int ExecuteNonQuery(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             int value;
 
@@ -331,6 +226,140 @@ namespace Simple.Net.Core.Data.Repository
         }
 
 
+        #endregion
+
+
+        #region Async Data Access
+
+        public async Task<DataTable> ReadSqlAsync(string commandText, DbParameter[] parameters)
+        {
+            return await ReadAsync(commandText, CommandType.Text, parameters);
+        }
+
+        public async Task<DataTable> ReadProcAsync(string commandText, DbParameter[] parameters)
+        {
+            return await ReadAsync(commandText, CommandType.StoredProcedure, parameters);
+        }
+
+        /// <summary>
+        /// Execute a read against the database and returns the dataset.
+        /// </summary>
+        /// <param name="commandText">The sql or procedure name to execute</param>
+        /// <param name="commandType">The command type</param>
+        /// <param name="parameters">An array || a list of parameters to pass to the command</param>
+        /// <returns>The records populated into a dataset/data table.</returns>
+        public async Task<DataTable> ReadAsync(string commandText, CommandType commandType, DbParameter[] parameters)
+        {
+            var dataTable = new DataTable();
+
+            try
+            {
+                using (var connection = SqlConnectionInfo.GetNewConnection())
+                {
+
+                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
+                    {
+                        command.CommandText = commandText;
+                        command.CommandType = commandType;
+
+                        // Add parameters
+                        if (parameters != null)
+                        {
+                            command.Parameters.AddRange(parameters.ToArray());
+                        }
+
+                        var dr = await command.ExecuteReaderAsync();
+
+                        dataTable.Load(dr);
+
+                        command.Parameters.Clear();
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ex.Data.Add("CommandText", commandText);
+                ex.Data.Add("CommandType", commandType.ToString());
+
+                if (parameters != null)
+                {
+                    if (commandType == CommandType.StoredProcedure)
+                        ex.Data.Add("SqlCommand", parameters.FormatToExecuteProcedure(commandText));
+
+                    foreach (var parameter in parameters)
+                    {
+                        ex.Data.Add(parameter.ParameterName, parameter.Value);
+                    }
+                }
+
+                ex.TraceException();
+                throw;
+            }
+
+            return dataTable;
+        }
+
+
+        /// <summary>
+        /// Executes a command against the dataset and returns the first value received.
+        /// </summary>
+        /// <param name="commandText">The sql or procedure name to execute</param>
+        /// <param name="commandType">The command type</param>
+        /// <param name="parameters">An array || a list of parameters to pass to the command</param>
+        /// <returns>The first value returned</returns>
+        public async Task<object> ExecuteScalarAsync(string commandText, CommandType commandType, DbParameter[] parameters)
+        {
+            object value;
+
+            try
+            {
+                using (var connection = SqlConnectionInfo.GetNewConnection())
+                {
+
+
+                    using (var command = SqlConnectionInfo.GetNewCommand(connection))
+                    {
+                        command.CommandText = commandText;
+                        command.CommandType = commandType;
+
+                        // Add parameters
+                        if (parameters != null)
+                        {
+                            command.Parameters.AddRange(parameters.ToArray());
+                        }
+
+                        value = await command.ExecuteScalarAsync();
+
+                        command.Parameters.Clear();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Data.Add("CommandText", commandText);
+                ex.Data.Add("CommandType", commandType.ToString());
+
+                if (parameters != null)
+                {
+                    if (commandType == CommandType.StoredProcedure)
+                        ex.Data.Add("SqlCommand", parameters.FormatToExecuteProcedure(commandText));
+
+                    foreach (var parameter in parameters)
+                    {
+                        ex.Data.Add(parameter.ParameterName, parameter.Value);
+                    }
+                }
+
+                ex.TraceException();
+                throw;
+            }
+
+            return value;
+        }
+
 
         /// <summary>
         /// Use this to execute a command against the database when a response is NOT needed 
@@ -340,7 +369,7 @@ namespace Simple.Net.Core.Data.Repository
         /// <param name="commandType">The command type</param>
         /// <param name="parameters">An array || a list of parameters to pass to the command</param>
         /// <returns>The count of number of records affected.</returns>
-        protected async Task<int> ExecuteNonQueryAsync(string commandText, CommandType commandType, DbParameter[] parameters)
+        public async Task<int> ExecuteNonQueryAsync(string commandText, CommandType commandType, DbParameter[] parameters)
         {
             int value;
 
@@ -392,32 +421,83 @@ namespace Simple.Net.Core.Data.Repository
         }
 
 
+        #endregion
 
-
-        /// <summary>
-        /// Helper method to retreive the SqlParameter
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="value"></param>
-        protected DbParameter GetSqlParameter(string name, object value)
+        public IEnumerable<T> Read<T>(IRowMapper<T> mapper, string commandText, CommandType commandType, DbParameter[] parameters)
         {
-            return SqlConnectionInfo.GetSqlParameter(name, value);
+            using (var connection = SqlConnectionInfo.GetNewConnection())
+            {
+                using (var command = SqlConnectionInfo.GetNewCommand(connection))
+                {
+                    command.CommandText = commandText;
+                    command.CommandType = commandType;
+                    // Add parameters
+                    if (parameters != null) command.Parameters.AddRange(parameters.ToArray());
+
+                    using (IDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            yield return mapper.MapRow(reader);
+                        }
+                    }
+
+                    command.Parameters.Clear();
+                }
+            }
         }
 
-        protected DbParameter GetSqlParameter(string name, object value, DbType dbType)
+        public async Task< IEnumerable<T> > ReadAsync<T>(IRowMapper<T> mapper, string commandText, CommandType commandType, DbParameter[] parameters)
         {
-            return SqlConnectionInfo.GetSqlParameter(name, value, dbType);
+            var results = new List<T>();
+
+            using (var connection = SqlConnectionInfo.GetNewConnection())
+            {
+                using (var command = SqlConnectionInfo.GetNewCommand(connection))
+                {
+                    command.CommandText = commandText;
+                    command.CommandType = commandType;
+                    // Add parameters
+                    if (parameters != null) command.Parameters.AddRange(parameters.ToArray());
+
+                    using (IDataReader reader = await command.ExecuteReaderAsync())
+                    {
+                        while (reader.Read())
+                        {
+                            results.Add(mapper.MapRow(reader));
+                        }
+                    }
+
+                    command.Parameters.Clear();
+                }
+            }
+
+            return results;
         }
 
-        protected DbParameter GetSqlParameter(string name, object value, DbType dbType, ParameterDirection direction)
+
+        #region ISimple Db Parameter Provider
+        public DbParameter GetDbParameter(string name, object value)
         {
-            return SqlConnectionInfo.GetSqlParameter(name, value, dbType, direction);
+            return SqlConnectionInfo.GetDbParameter(name, value);
         }
 
-        protected DbParameter GetSqlParameter(string name, object value, ParameterDirection direction)
+        public DbParameter GetDbParameter(string name, object value, DbType dbType)
         {
-            return SqlConnectionInfo.GetSqlParameter(name, value, direction);
+            return SqlConnectionInfo.GetDbParameter(name, value, dbType);
         }
+
+        public DbParameter GetDbParameter(string name, object value, DbType dbType, ParameterDirection direction)
+        {
+            return SqlConnectionInfo.GetDbParameter(name, value, dbType, direction);
+        }
+
+        public DbParameter GetDbParameter(string name, object value, ParameterDirection direction)
+        {
+            return SqlConnectionInfo.GetDbParameter(name, value, direction);
+        }
+
+        #endregion
 
         public void Dispose()
         {

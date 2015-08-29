@@ -4,15 +4,32 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0237F2DA-FC39-4C8D-8EE3-8B3498BF7EEF}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{C679F633-8FEE-45F8-9D97-84EDD260BFCE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Simple.Net.Core.Data</RootNamespace>
-    <AssemblyName>Simple.Net.Core.Data</AssemblyName>
+    <RootNamespace>DataExample</RootNamespace>
+    <AssemblyName>DataExample</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,7 +49,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,30 +58,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection\ISimpleDbParameterProvider.cs" />
-    <Compile Include="Connection\ISimpleSqlConnectionProvider.cs" />
-    <Compile Include="Connection\SimpleSqlConnectionProvider.cs" />
-    <Compile Include="Helpers\DataTableHelper.cs" />
-    <Compile Include="Helpers\SqlCommandHelper.cs" />
-    <Compile Include="Helpers\TraceHelper.cs" />
-    <Compile Include="Mapper\IRowMapper.cs" />
-    <Compile Include="Mapper\MapBuilder.cs" />
-    <Compile Include="Mapper\ReflectionRowMapper.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs" />
-    <Compile Include="Repository\AbstractInMemoryRepository.cs" />
-    <Compile Include="Repository\Contracts\IAsyncDataAccess.cs" />
-    <Compile Include="Repository\Contracts\ISimpleDataAccess.cs" />
-    <Compile Include="Repository\Contracts\ISyncDataAccess.cs" />
-    <Compile Include="Repository\SimpleSqlRepository.cs" />
-    <Compile Include="Repository\Contracts\IRepository.cs" />
-    <Compile Include="Utility\Gaurd.cs" />
-    <Compile Include="Utility\IFluentInterface.cs" />
-    <Compile Include="Utility\StaticReflection.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Sample.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Sample_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Sample.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

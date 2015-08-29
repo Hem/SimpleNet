@@ -5,7 +5,7 @@ using System.Data.Common;
 
 namespace Simple.Net.Core.Data.Connection
 {
-    public class GenericSqlConnectionProvider : IDatabaseConnection
+    public class SimpleSqlConnectionProvider : ISimpleSqlConnectionProvider
     {
         public string ConnectionString { get; }
         public string ProviderName { get; }
@@ -14,13 +14,13 @@ namespace Simple.Net.Core.Data.Connection
         
 
 
-        public GenericSqlConnectionProvider(string connectionName)
+        public SimpleSqlConnectionProvider(string connectionName)
         {
             // get the connection based on connection name
             var connection = ConfigurationManager.ConnectionStrings[connectionName];
 
             if (connection == null)
-                throw new Exception(string.Format("Connection {0} not found", connectionName));
+                throw new Exception($"Connection {connectionName} not found");
 
 
             // Connection string
@@ -67,7 +67,7 @@ namespace Simple.Net.Core.Data.Connection
             return null;
         }
 
-        public DbParameter GetSqlParameter(string name, object value)
+        public DbParameter GetDbParameter(string name, object value)
         {
             var param = Factory.CreateParameter();
 
@@ -80,9 +80,9 @@ namespace Simple.Net.Core.Data.Connection
             return param;
         }
 
-        public DbParameter GetSqlParameter(string name, object value, DbType dbType)
+        public DbParameter GetDbParameter(string name, object value, DbType dbType)
         {
-            var param = GetSqlParameter(name, value);
+            var param = GetDbParameter(name, value);
 
             if (param != null)
             {
@@ -93,9 +93,9 @@ namespace Simple.Net.Core.Data.Connection
         }
 
 
-        public DbParameter GetSqlParameter(string name, object value, DbType dbType, ParameterDirection direction)
+        public DbParameter GetDbParameter(string name, object value, DbType dbType, ParameterDirection direction)
         {
-            var param = GetSqlParameter(name, value);
+            var param = GetDbParameter(name, value);
 
             if (param != null)
             {
@@ -107,9 +107,9 @@ namespace Simple.Net.Core.Data.Connection
         }
 
 
-        public DbParameter GetSqlParameter(string name, object value, ParameterDirection direction)
+        public DbParameter GetDbParameter(string name, object value, ParameterDirection direction)
         {
-            var param = GetSqlParameter(name, value);
+            var param = GetDbParameter(name, value);
 
             if (param != null)
             {

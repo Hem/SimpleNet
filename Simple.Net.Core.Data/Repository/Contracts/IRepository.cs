@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Simple.Net.Core.Data.Repository
+namespace Simple.Net.Core.Data.Repository.Contracts
 {
     public interface IRepository : IDisposable
     {
