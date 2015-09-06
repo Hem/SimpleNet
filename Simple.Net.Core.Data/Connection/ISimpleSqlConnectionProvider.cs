@@ -1,14 +1,14 @@
 ﻿using System.Data.Common;
 
-namespace Simple.Net.Core.Data.Connection
+namespace SimpleNet.Data.Connection
 {
     public interface ISimpleSqlConnectionProvider : ISimpleDbParameterProvider
     {
         string ConnectionString { get; }
         string ProviderName { get; }
 
-        DbConnection GetNewConnection();
-        DbCommand GetNewCommand(DbConnection connection);
+        DbConnection GetConnection();
 
+        DbCommand CreateDbCommand(DbConnection connection);
     }
 }

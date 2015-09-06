@@ -7,8 +7,8 @@
     <ProjectGuid>{0237F2DA-FC39-4C8D-8EE3-8B3498BF7EEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Simple.Net.Core.Data</RootNamespace>
-    <AssemblyName>Simple.Net.Core.Data</AssemblyName>
+    <RootNamespace>SimpleNet.Data</RootNamespace>
+    <AssemblyName>SimpleNet.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -52,7 +52,6 @@
     <Compile Include="Connection\ISimpleDbParameterProvider.cs" />
     <Compile Include="Connection\ISimpleSqlConnectionProvider.cs" />
     <Compile Include="Connection\SimpleSqlConnectionProvider.cs" />
-    <Compile Include="Helpers\DataTableHelper.cs" />
     <Compile Include="Helpers\SqlCommandHelper.cs" />
     <Compile Include="Helpers\TraceHelper.cs" />
     <Compile Include="Mapper\IRowMapper.cs" />
@@ -64,8 +63,9 @@
     <Compile Include="Repository\Contracts\IAsyncDataAccess.cs" />
     <Compile Include="Repository\Contracts\ISimpleDataAccess.cs" />
     <Compile Include="Repository\Contracts\ISyncDataAccess.cs" />
-    <Compile Include="Repository\SimpleSqlRepository.cs" />
+    <Compile Include="Repository\SimpleDataAccess.cs" />
     <Compile Include="Repository\Contracts\IRepository.cs" />
+    <Compile Include="Repository\SimpleSqlRepository.cs" />
     <Compile Include="Utility\Gaurd.cs" />
     <Compile Include="Utility\IFluentInterface.cs" />
     <Compile Include="Utility\StaticReflection.cs" />

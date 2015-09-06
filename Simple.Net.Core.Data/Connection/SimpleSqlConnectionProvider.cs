@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.Common;
 
-namespace Simple.Net.Core.Data.Connection
+namespace SimpleNet.Data.Connection
 {
     public class SimpleSqlConnectionProvider : ISimpleSqlConnectionProvider
     {
@@ -34,7 +34,7 @@ namespace Simple.Net.Core.Data.Connection
         }
 
 
-        public DbConnection GetNewConnection()
+        public DbConnection GetConnection()
         {
             var conn = Factory.CreateConnection();
 
@@ -53,7 +53,7 @@ namespace Simple.Net.Core.Data.Connection
         }
 
 
-        public DbCommand GetNewCommand(DbConnection connection)
+        public DbCommand CreateDbCommand(DbConnection connection)
         {
             var command = Factory.CreateCommand();
 

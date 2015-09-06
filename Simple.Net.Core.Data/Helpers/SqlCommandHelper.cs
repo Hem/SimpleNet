@@ -5,7 +5,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace Simple.Net.Core.Data.Helpers
+namespace SimpleNet.Data.Helpers
 {
     public static class SqlCommandHelper
     {
@@ -64,11 +64,11 @@ namespace Simple.Net.Core.Data.Helpers
                 case SqlDbType.Bit:
                     return Convert.ToBoolean(parameter.Value) ? 1 : 0;
                 case SqlDbType.Date:
-                    return String.Format(" '{0}' ", Convert.ToDateTime(parameter.Value).ToString("d"));
+                    return $" '{Convert.ToDateTime(parameter.Value).ToString("d")}' ";
                 case SqlDbType.DateTime:
-                    return String.Format(" '{0}' ", Convert.ToDateTime(parameter.Value).ToString("g"));
+                    return $" '{Convert.ToDateTime(parameter.Value).ToString("g")}' ";
                 default:
-                    return String.Format(" '{0}' ", parameter.Value);
+                    return $" '{parameter.Value}' ";
             }
         }
 

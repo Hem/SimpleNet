@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Simple.Net.Core.Data.Mapper
+namespace SimpleNet.Data.Mapper
 {
     /// <summary>
     /// Represents the operation of mapping a <see cref="IDataRecord"/> to <typeparamref name="TResult"/>.

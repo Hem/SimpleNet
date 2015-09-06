@@ -2,11 +2,10 @@
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sample.Net.Core.Data.UnitTest.Dto;
-using Simple.Net.Core.Data.Mapper;
-using Simple.Net.Core.Data.Repository;
+using SimpleNet.Data.Mapper;
+using SimpleNet.Data.Repository;
 
 namespace Sample.Net.Core.Data.UnitTest
 {
@@ -26,6 +25,9 @@ namespace Sample.Net.Core.Data.UnitTest
             var dal = new SimpleDataAccess("Simple");
 
             var dt = dal.ReadSql(@"SELECT * FROM State", null);
+
+            Assert.IsNotNull(dt);
+            Assert.IsTrue(dt.Rows.Count > 0);
         }
 
         [TestMethod]

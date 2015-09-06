@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Simple.Net.Core.Data.Helpers
+namespace SimpleNet.Data.Helpers
 {
     public static class TraceHelper
     {

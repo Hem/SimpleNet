@@ -1,6 +1,6 @@
-﻿using Simple.Net.Core.Data.Connection;
+﻿using SimpleNet.Data.Connection;
 
-namespace Simple.Net.Core.Data.Repository.Contracts
+namespace SimpleNet.Data.Repository.Contracts
 {
     public interface ISimpleDataAccess : ISyncDataAccess, IAsyncDataAccess, ISimpleDbParameterProvider
     {

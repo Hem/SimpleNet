@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Simple.Net.Core.Data.Utility
+namespace SimpleNet.Data.Utility
 {
     /// <summary>
     /// Provides a set of helper methods that retrieve

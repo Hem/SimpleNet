@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Simple.Net.Core.Data.Repository
+namespace SimpleNet.Data.Repository
 {
     public abstract class AbstractInMemoryRepository<T> where T : class , new()
     {

@@ -16,10 +16,10 @@ using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Simple.Net.Core.Data.Properties;
-using Simple.Net.Core.Data.Utility;
+using SimpleNet.Data.Properties;
+using SimpleNet.Data.Utility;
 
-namespace Simple.Net.Core.Data.Mapper
+namespace SimpleNet.Data.Mapper
 {
     /// <summary>
     /// Static entry point for the <see cref="IMapBuilderContext&lt;TResult&gt;"/> interface, which allows to build reflection-based <see cref="IRowMapper&lt;TResult&gt;"/>s.

@@ -6,10 +6,10 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Simple.Net.Core.Data.Properties;
-using Simple.Net.Core.Data.Utility;
+using SimpleNet.Data.Properties;
+using SimpleNet.Data.Utility;
 
-namespace Simple.Net.Core.Data.Mapper
+namespace SimpleNet.Data.Mapper
 {
     /// <summary>
     /// An implementation of <see cref="IRowMapper{TResult}"/> that uses reflection to convert data rows to <typeparamref name="TResult"/>.
@@ -35,7 +35,7 @@ namespace Simple.Net.Core.Data.Mapper
         /// <param name="propertyMappings">The <see cref="PropertyMapping"/>'s that specify how each property should be mapped.</param>
         public ReflectionRowMapper(IDictionary<PropertyInfo, PropertyMapping> propertyMappings)
         {
-            if (propertyMappings == null) throw new ArgumentNullException("propertyMappings");
+            if (propertyMappings == null) throw new ArgumentNullException(nameof(propertyMappings));
 
             try
             {
@@ -213,7 +213,7 @@ namespace Simple.Net.Core.Data.Mapper
         /// <returns>The value for the corresponding column converted to the type of the mapped property.</returns>
         public override object GetPropertyValue(IDataRecord row)
         {
-            if (row == null) throw new ArgumentNullException("row");
+            if (row == null) throw new ArgumentNullException(nameof(row));
 
             object value;
             try

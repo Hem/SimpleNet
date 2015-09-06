@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using Simple.Net.Core.Data.Mapper;
+using SimpleNet.Data.Mapper;
 
-namespace Simple.Net.Core.Data.Repository.Contracts
+namespace SimpleNet.Data.Repository.Contracts
 {
     public interface ISyncDataAccess
     {

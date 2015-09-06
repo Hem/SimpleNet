@@ -1,7 +1,7 @@
 using System.Data;
 using System.Data.Common;
 
-namespace Simple.Net.Core.Data.Connection
+namespace SimpleNet.Data.Connection
 {
     public interface ISimpleDbParameterProvider
     {

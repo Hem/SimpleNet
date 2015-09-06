@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.Core.Data", "Simple.Net.Core.Data\Simple.Net.Core.Data.csproj", "{0237F2DA-FC39-4C8D-8EE3-8B3498BF7EEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Data", "Simple.Net.Core.Data\SimpleNet.Data.csproj", "{0237F2DA-FC39-4C8D-8EE3-8B3498BF7EEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.Core.ServiceHost.Contracts", "Simple.Net.Core.ServiceHost.Contracts\Simple.Net.Core.ServiceHost.Contracts.csproj", "{881DC18E-F009-4E24-93B0-D6EFDE5759B6}"
 EndProject
@@ -46,7 +46,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{FE33
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E48A934D-E5CB-4070-B714-DD653918E728}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.Core.Data.UnitTest", "Simple.Net.Core.Data.UnitTest\Simple.Net.Core.Data.UnitTest.csproj", "{6646A9B8-68C2-41DF-8966-789D50A8A919}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Data.UnitTest", "Simple.Net.Core.Data.UnitTest\SimpleNet.Data.UnitTest.csproj", "{6646A9B8-68C2-41DF-8966-789D50A8A919}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

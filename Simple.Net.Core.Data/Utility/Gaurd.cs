@@ -1,7 +1,7 @@
 ﻿using System;
-using Simple.Net.Core.Data.Properties;
+using SimpleNet.Data.Properties;
 
-namespace Simple.Net.Core.Data.Utility
+namespace SimpleNet.Data.Utility
 {
     /// <summary>
     /// A static helper class that includes various parameter checking routines.
