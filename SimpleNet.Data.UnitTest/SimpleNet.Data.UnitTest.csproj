@@ -62,7 +62,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Simple.Net.Core.Data\SimpleNet.Data.csproj">
+    <ProjectReference Include="..\SimpleNet.Data\SimpleNet.Data.csproj">
       <Project>{0237f2da-fc39-4c8d-8ee3-8b3498bf7eef}</Project>
       <Name>SimpleNet.Data</Name>
     </ProjectReference>

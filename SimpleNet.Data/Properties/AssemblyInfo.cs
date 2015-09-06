@@ -4,10 +4,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SimpleNet.Data")]
-[assembly: AssemblyDescription("SimpleNet data access layer")]
+[assembly: AssemblyTitle("SimpleNet data access layer")]
+[assembly: AssemblyDescription("Simplified ADO.NET data access")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Hem Talreja Inc")]
 [assembly: AssemblyProduct("SimpleNet.Data")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
