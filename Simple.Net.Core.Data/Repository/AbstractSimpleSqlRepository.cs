@@ -1,14 +1,27 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Threading.Tasks;
+using SimpleNet.Data.Mapper;
 using SimpleNet.Data.Repository.Contracts;
 
 namespace SimpleNet.Data.Repository
 {
-    public abstract class SimpleSqlRepository
+    public abstract class AbstractSimpleSqlRepository
     {
         public  abstract ISimpleDataAccess Database { get; set; }
-        
+
+
+        protected IEnumerable<T> Read<T>(IRowMapper<T> mapper, string commandText, CommandType commandType, DbParameter[] parameters)
+        {
+            return Database.Read(mapper, commandText, commandType, parameters);
+        }
+
+        protected Task<IEnumerable<T>> ReadAsync<T>(IRowMapper<T> mapper, string commandText, CommandType commandType,
+            DbParameter[] parameters)
+        {
+            return Database.ReadAsync(mapper, commandText, commandType, parameters);
+        }
 
         protected int ExecuteNonQuery(string commandText, CommandType commandType, DbParameter[] parameters)
         {

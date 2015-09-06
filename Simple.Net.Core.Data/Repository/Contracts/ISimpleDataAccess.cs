@@ -2,9 +2,8 @@
 
 namespace SimpleNet.Data.Repository.Contracts
 {
-    public interface ISimpleDataAccess : ISyncDataAccess, IAsyncDataAccess, ISimpleDbParameterProvider
+    public interface ISimpleDataAccess : ISyncDataAccess, ISyncDataAccessor, IAsyncDataAccess, IAsyncDataAccessor, ISimpleDbParameterProvider
     {
-        
     }
-    
+
 }
