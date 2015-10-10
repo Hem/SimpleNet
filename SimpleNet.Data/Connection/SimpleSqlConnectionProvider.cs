@@ -74,7 +74,7 @@ namespace SimpleNet.Data.Connection
             if (param != null)
             {
                 param.ParameterName = name;
-                param.Value = value;
+                param.Value = value ?? DBNull.Value;
             }
 
             return param;

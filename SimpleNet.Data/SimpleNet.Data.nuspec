@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SimpleNet.Data.dll</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Hem Talreja</authors>
     <owners>Hem Talreja</owners>
 	<title>SimpleNet Data Access</title>
