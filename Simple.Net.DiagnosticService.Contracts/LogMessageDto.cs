@@ -4,10 +4,10 @@ namespace SimpleNet.DiagnosticService.Contracts
 {
     public class LogMessageDto
     {
-        public String LogLevel { get; set; }
+        public string LogLevel { get; set; }
         public DateTime LogDateTime { get; set; }
-        public String LogText { get; set; }
-        public String ComputerName { get; set; }
-        public String ApplicationName { get; set; }
+        public string LogText { get; set; }
+        public string ComputerName { get; set; }
+        public string ApplicationName { get; set; }
     }
 }

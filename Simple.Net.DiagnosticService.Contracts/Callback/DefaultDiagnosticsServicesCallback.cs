@@ -10,10 +10,7 @@
         protected virtual void OnMessageReceived( LogMessageDto message )
         {
             DiagnosticMessage handler = MessageReceived;
-            if( handler != null )
-            {
-                handler( message );
-            }
+            handler?.Invoke( message );
         }
 
         public void ReceiveLogMessage( LogMessageDto message )

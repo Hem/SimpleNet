@@ -5,6 +5,6 @@ namespace SimpleNet.ServiceHost.Contracts
 {
     public interface IServiceDefinitionProvider
     {
-        IEnumerable<ServiceDefinitionBase> ListServiceDefinitions(String hostName);
+        IEnumerable<ServiceDefinitionBase> ListServiceDefinitions(string hostName);
     }
 }

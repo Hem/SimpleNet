@@ -37,7 +37,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\ConnectedClientsRepository.cs" />
+    <Compile Include="Business\ConnectedDiagnosticClientCallbacks.cs" />
     <Compile Include="Business\DuplexServiceClientRepository.cs" />
     <Compile Include="DiagnosticsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

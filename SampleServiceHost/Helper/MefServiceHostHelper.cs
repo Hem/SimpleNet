@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Composition;
+﻿using System;
+using System.ComponentModel.Composition;
 using Microsoft.Practices.ServiceLocation;
 using SimpleNet.Diagnostics;
 using SimpleNet.ServiceHost.Helpers;
@@ -8,18 +9,26 @@ namespace SimpleNet.Sample.ServiceHost.Helper
     [Export]
     public class MefServiceHostHelper : AbstractServiceHostHelper
     {
-        public sealed override string HostName { get; set; }
+        private const string NAME = "SAMPLE SERVICE HOST";
 
         [Import]
-        public sealed override IServiceLocator ServiceLocator { get; set; }
-
-        [Import]
-        public sealed override Logger Logger { get; set; }
+        public Logger Logger { get; set; }
 
 
-        public MefServiceHostHelper()
+        [ImportingConstructor]
+        public MefServiceHostHelper([Import] IServiceLocator serviceLocator) : base( NAME, serviceLocator)
         {
-            HostName = "SAMPLE SERVICE HOST";
+        }
+
+
+        public override void LogInformation(string message)
+        {
+            Logger.Info(message);
+        }
+
+        public override void LogError(string message, Exception ex)
+        {
+            Logger.Error(message, ex);
         }
     }
 

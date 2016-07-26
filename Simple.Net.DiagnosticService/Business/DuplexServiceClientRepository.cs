@@ -7,10 +7,12 @@ namespace SimpleNet.DiagnosticService.Business
 {
     public class DuplexServiceClientRepository<T>
     {
-        protected readonly Dictionary<Guid, T> _ConnectedClients = new Dictionary<Guid, T>();
 
 
-        protected Boolean IsOpen(T callback)
+        protected readonly Dictionary<Guid, T> ConnectedClients = new Dictionary<Guid, T>();
+
+
+        protected bool IsOpen(T callback)
         {
             // ReSharper disable CompareNonConstrainedGenericWithNull
             if (callback == null)
@@ -18,20 +20,19 @@ namespace SimpleNet.DiagnosticService.Business
             // ReSharper restore CompareNonConstrainedGenericWithNull
 
             var comm = (ICommunicationObject)callback;
-            if (comm.State != CommunicationState.Opened)
-                return false;
 
-            return true;
+
+            return comm.State == CommunicationState.Opened;
         }
 
 
         public void AddCallback(Guid key, T callback)
         {
-            lock (_ConnectedClients)
+            lock (ConnectedClients)
             {
-                if (_ConnectedClients.ContainsKey(key))
-                    _ConnectedClients.Remove(key);
-                _ConnectedClients.Add(key, callback);
+                if (ConnectedClients.ContainsKey(key))
+                    ConnectedClients.Remove(key);
+                ConnectedClients.Add(key, callback);
             }
         }
 
@@ -39,26 +40,26 @@ namespace SimpleNet.DiagnosticService.Business
 
         public Guid[] ListAllKeys()
         {
-            lock (_ConnectedClients)
+            lock (ConnectedClients)
             {
-                return _ConnectedClients.Keys.ToArray();
+                return ConnectedClients.Keys.ToArray();
             }
         }
 
         protected T GetCallback(Guid key)
         {
-            lock (_ConnectedClients)
+            lock (ConnectedClients)
             {
-                return _ConnectedClients.ContainsKey(key) ? _ConnectedClients[key] : default(T);
+                return ConnectedClients.ContainsKey(key) ? ConnectedClients[key] : default(T);
             }
         }
 
         public virtual void DeleteKey(Guid key)
         {
-            lock (_ConnectedClients)
+            lock (ConnectedClients)
             {
-                if (_ConnectedClients.ContainsKey(key))
-                    _ConnectedClients.Remove(key);
+                if (ConnectedClients.ContainsKey(key))
+                    ConnectedClients.Remove(key);
             }
         }
 

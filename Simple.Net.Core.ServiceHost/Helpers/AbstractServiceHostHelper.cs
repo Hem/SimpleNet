@@ -4,7 +4,6 @@ using System.IdentityModel.Configuration;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using Microsoft.Practices.ServiceLocation;
-using SimpleNet.Diagnostics;
 using SimpleNet.ServiceHost.Contracts;
 using SimpleNet.ServiceHost.Contracts.Bindings;
 using SimpleNet.ServiceHost.IocServiceHost;
@@ -17,15 +16,30 @@ namespace SimpleNet.ServiceHost.Helpers
 
     public abstract class AbstractServiceHostHelper
     {
-        
-        public abstract String HostName { get; set; }
 
-        public abstract IServiceLocator ServiceLocator { get; set; }
+        public readonly string HostName;
 
-        public abstract Logger Logger { get; set; }
-
+        protected readonly IServiceLocator ServiceLocator;
 
         protected readonly List<ServiceDefinitionHost> ServiceDefinitionHosts = new List<ServiceDefinitionHost>();
+
+
+
+        protected AbstractServiceHostHelper(string hostName, IServiceLocator serviceLocator)
+        {
+            HostName = hostName;
+            ServiceLocator = serviceLocator;
+        }
+        
+
+        
+
+
+        public abstract void LogInformation(string message);
+
+        public abstract void LogError(string message, Exception ex);
+
+
 
 
 
@@ -56,7 +70,7 @@ namespace SimpleNet.ServiceHost.Helpers
 
                     foreach (var sd in defs)
                     {
-                        Logger.Info(String.Format("Starting:{0} of type:{1}", sd.ServiceDescription, sd.ServiceType));
+                        LogInformation($"Starting:{sd.ServiceDescription} of type:{sd.ServiceType}");
 
 
                         ServiceDefinitionHost sdh = null;
@@ -88,8 +102,8 @@ namespace SimpleNet.ServiceHost.Helpers
                                     var baseAddressUri = new Uri(wcfServiceMsmq.ServiceAddress.WcfEndpointUrl, UriKind.Absolute);
                                     var msmqBindingUri = new Uri(wcfServiceMsmq.ServiceAddress.MsmqBindingUrl, UriKind.Absolute);
 
-                                    Logger.Info(String.Format("... URL:{0}", baseAddressUri));
-                                    Logger.Info(String.Format("... Binding URL: {0}", msmqBindingUri));
+                                    LogInformation($"... URL:{baseAddressUri}");
+                                    LogInformation($"... Binding URL: {msmqBindingUri}");
 
                                     sdh = new ServiceDefinitionHost
                                     {
@@ -141,7 +155,7 @@ namespace SimpleNet.ServiceHost.Helpers
 
                                     foreach (var uri in sdh.Host.BaseAddresses)
                                     {
-                                        Logger.Info(String.Format("Listening at:{0}", uri));
+                                        LogInformation($"Listening at:{uri}");
                                     }
 
 
@@ -239,7 +253,7 @@ namespace SimpleNet.ServiceHost.Helpers
 
                                     foreach (var uri in sdh.Host.BaseAddresses)
                                     {
-                                        Logger.Info(String.Format("Listening at:{0}", uri));
+                                        LogInformation($"Listening at:{uri}");
                                     }
 
                                 }
@@ -286,7 +300,7 @@ namespace SimpleNet.ServiceHost.Helpers
                                         var mexBinding = MetadataExchangeBindings.CreateMexHttpBinding();
                                         sdh.Host.AddServiceEndpoint(ServiceMetadataBehavior.MexContractName, mexBinding, "mex", wsdlUrl);
                                         
-                                        Logger.Info( "WSDL URL: " + wsdlUrl );
+                                        LogInformation( "WSDL URL: " + wsdlUrl );
                                     }
 
                                     //Configure metadata behavior
@@ -321,7 +335,7 @@ namespace SimpleNet.ServiceHost.Helpers
 
                                     foreach (var uri in sdh.Host.BaseAddresses)
                                     {
-                                        Logger.Info(String.Format("Listening at:{0}", uri));
+                                        LogInformation($"Listening at:{uri}");
                                     }
 
                                 }
@@ -344,9 +358,9 @@ namespace SimpleNet.ServiceHost.Helpers
             }
             catch (Exception ex)
             {
-                Logger.Error( "Service Failed To Start", ex );
+                LogError( "Service Failed To Start", ex );
 
-                throw new ServiceActivationException(String.Format("Service Host:{0} failed to start", HostName), ex);
+                throw new ServiceActivationException($"Service Host:{HostName} failed to start", ex);
             }
 
             return startedList;
@@ -364,7 +378,7 @@ namespace SimpleNet.ServiceHost.Helpers
                 {
                     case ServiceTypeDefinition.SelfContainedHost:
                         if (servicehost.SelfContainedHost == null) continue;
-                        Logger.Info("...Stopping:" + servicehost.ServiceDefinition.ServiceDescription);
+                        LogInformation("...Stopping:" + servicehost.ServiceDefinition.ServiceDescription);
                         servicehost.SelfContainedHost.Stop();
 
                         break;
@@ -372,7 +386,7 @@ namespace SimpleNet.ServiceHost.Helpers
                     case ServiceTypeDefinition.WcfHttpServiceHost:
 
                         if (servicehost.Host == null) continue;
-                        Logger.Info("...Stopping:" + servicehost.ServiceDefinition.ServiceDescription);
+                        LogInformation("...Stopping:" + servicehost.ServiceDefinition.ServiceDescription);
                         servicehost.Host.Close();
 
                         break;

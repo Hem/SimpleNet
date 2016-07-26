@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.ComponentModel.Composition;
 using System.ServiceModel;
 using SimpleNet.Diagnostics.Contracts;
@@ -13,11 +14,18 @@ namespace SimpleNet.DiagnosticService
                                     AddressFilterMode = AddressFilterMode.Any)]
     public class DiagnosticsService : IDiagnosticsService
     {
+
         [Import]
         public ConnectedDiagnosticClientCallbacks CallbackManager { get; set; }
 
+
+
         [Import("DIAGNOSTICS_SHARED_SECRET", AllowDefault = true)]
-        public String SharedSecret { get; set; }
+        public string SharedSecret { get; set; }
+
+
+
+
 
         public void Connect( Guid appInstanceId, string minLogLevel, string sharedSecret )
         {
@@ -40,12 +48,6 @@ namespace SimpleNet.DiagnosticService
         }
 
 
-        IDiagnosticsServiceCallback Callback
-        {
-            get
-            {
-                return OperationContext.Current.GetCallbackChannel<IDiagnosticsServiceCallback>();
-            }
-        }
+        IDiagnosticsServiceCallback Callback => OperationContext.Current.GetCallbackChannel<IDiagnosticsServiceCallback>();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace SimpleNet.DiagnosticService.Contracts
 {
+    [ServiceContract]
     public interface IDiagnosticsServiceCallback
     {
         // stupid thing do not forget this
