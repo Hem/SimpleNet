@@ -12,7 +12,7 @@ namespace SimpleNet.Diagnostics.Loggers
 
         public override void WriteLog(LoggerLogLevel level, string logText)
         {
-            Trace.WriteLine(String.Format("{0}: {1}", level, logText));
+            Trace.WriteLine($"{level}: {logText}");
         }
     }
 }

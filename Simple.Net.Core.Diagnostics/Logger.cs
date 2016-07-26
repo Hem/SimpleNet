@@ -4,7 +4,7 @@ using SimpleNet.Diagnostics.Contracts;
 namespace SimpleNet.Diagnostics
 {
 
-    public delegate void LogMessage(LoggerLogLevel level, String logText);
+    public delegate void LogMessage(LoggerLogLevel level, string logText);
     
     
     public class Logger
@@ -14,7 +14,7 @@ namespace SimpleNet.Diagnostics
         protected virtual void BroadcastMessage(LoggerLogLevel level, string logtext)
         {
             var handler = MessageBroadcast;
-            if (handler != null) handler(level, logtext);
+            handler?.Invoke(level, logtext);
         }
 
         public void Debug(string logText)

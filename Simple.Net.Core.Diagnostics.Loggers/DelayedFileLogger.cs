@@ -10,8 +10,8 @@ namespace SimpleNet.Diagnostics.Loggers
         protected readonly String LogFileName;
         protected readonly Object _lock = new object();
 
-        private const long OneKb = 1024;
-        private const long OneMb = OneKb * 1024;
+        private const long ONE_KB = 1024;
+        private const long ONE_MB = ONE_KB * 1024;
 
 
         public DelayedFileLogger(
@@ -21,7 +21,7 @@ namespace SimpleNet.Diagnostics.Loggers
                     int seconds = 2)
             : base(logger, seconds)
         {
-            ArchiveSizeBytes = archiveSizeMb*OneMb;
+            ArchiveSizeBytes = archiveSizeMb*ONE_MB;
             LogFileName = filename;
         }
 
@@ -42,7 +42,7 @@ namespace SimpleNet.Diagnostics.Loggers
         {
             lock (_lock)
             {
-                var contents = String.Format("{0}: {1:d} {1:T}: {2} \n", level, logDateTime, logText);
+                var contents = $"{level}: {logDateTime:d} {logDateTime:T}: {logText} \n";
                 File.AppendAllText(LogFileName, contents);
             }
         }
