@@ -1,4 +1,4 @@
-﻿namespace Simple.Net.Core.Diagnostics.Contracts
+﻿namespace SimpleNet.Diagnostics.Contracts
 {
     public enum LoggerLogLevel : byte
     {

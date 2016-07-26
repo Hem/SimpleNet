@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel;
 
-namespace Simple.Net.DiagnosticService.Contracts
+namespace SimpleNet.DiagnosticService.Contracts
 {
     public interface IDiagnosticsServiceCallback
     {

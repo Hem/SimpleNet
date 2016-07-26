@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.ServiceModel;
-using Simple.Net.Core.ServiceHost.Contracts.Address;
-using Simple.Net.Core.ServiceHost.Contracts.Bindings;
+using SimpleNet.ServiceHost.Contracts.Address;
+using SimpleNet.ServiceHost.Contracts.Bindings;
 
-namespace Simple.Net.DiagnosticService.Contracts.Address
+namespace SimpleNet.DiagnosticService.Contracts.Address
 {
     public class DiagnosticsAddressProvider
     {

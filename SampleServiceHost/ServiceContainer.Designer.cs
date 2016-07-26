@@ -1,4 +1,4 @@
-﻿namespace SampleServiceHost
+﻿namespace SimpleNet.Sample.ServiceHost
 {
     partial class ServiceContainer
     {

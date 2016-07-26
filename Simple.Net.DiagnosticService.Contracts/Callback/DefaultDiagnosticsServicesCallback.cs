@@ -1,4 +1,4 @@
-﻿namespace Simple.Net.DiagnosticService.Contracts.Callback
+﻿namespace SimpleNet.DiagnosticService.Contracts.Callback
 {
 
     public delegate void DiagnosticMessage( LogMessageDto message );

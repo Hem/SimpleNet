@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ServiceModel;
 
-namespace SampleService.Contracts
+namespace SimpleNet.Sample.Contracts
 {
     [ServiceContract]
     public interface ISampleQueueService

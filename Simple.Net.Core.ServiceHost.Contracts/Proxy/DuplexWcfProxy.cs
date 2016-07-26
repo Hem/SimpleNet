@@ -3,9 +3,9 @@ using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;
-using Simple.Net.Core.ServiceHost.Contracts.Address;
+using SimpleNet.ServiceHost.Contracts.Address;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Proxy
+namespace SimpleNet.ServiceHost.Contracts.Proxy
 {
     public abstract class DuplexWcfProxy<T, TV> : IUpdateWcfProxyCredentials, IWcfProxyChannel, IDisposable
     {

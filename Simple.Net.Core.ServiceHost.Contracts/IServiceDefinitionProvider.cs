@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Simple.Net.Core.ServiceHost.Contracts
+namespace SimpleNet.ServiceHost.Contracts
 {
     public interface IServiceDefinitionProvider
     {

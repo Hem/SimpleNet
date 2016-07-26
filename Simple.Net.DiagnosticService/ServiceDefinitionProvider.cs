@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using Simple.Net.Core.Diagnostics;
-using Simple.Net.Core.ServiceHost.Contracts;
-using Simple.Net.Core.ServiceHost.Contracts.Address;
-using Simple.Net.DiagnosticService.Contracts;
-using Simple.Net.DiagnosticService.Contracts.Address;
+using SimpleNet.Diagnostics;
+using SimpleNet.DiagnosticService.Contracts;
+using SimpleNet.DiagnosticService.Contracts.Address;
+using SimpleNet.ServiceHost.Contracts;
+using SimpleNet.ServiceHost.Contracts.Address;
 
-namespace Simple.Net.DiagnosticService
+namespace SimpleNet.DiagnosticService
 {
 
     [Export(typeof(IServiceDefinitionProvider))]

@@ -2,7 +2,7 @@
 using System.IdentityModel.Selectors;
 using System.ServiceModel;
 
-namespace Simple.Net.Core.ServiceHost.Validators
+namespace SimpleNet.ServiceHost.Validators
 {
     public class MockUserNamePasswordValidator: UserNamePasswordValidator
     {

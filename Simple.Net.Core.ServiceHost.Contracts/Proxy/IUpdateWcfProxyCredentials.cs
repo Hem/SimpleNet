@@ -1,6 +1,6 @@
 using System;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Proxy
+namespace SimpleNet.ServiceHost.Contracts.Proxy
 {
     public interface IUpdateWcfProxyCredentials
     {

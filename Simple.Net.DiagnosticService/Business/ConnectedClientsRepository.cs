@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Reflection;
-using Simple.Net.Core.Diagnostics;
-using Simple.Net.Core.Diagnostics.Contracts;
-using Simple.Net.DiagnosticService.Contracts;
+using SimpleNet.Diagnostics;
+using SimpleNet.Diagnostics.Contracts;
+using SimpleNet.DiagnosticService.Contracts;
 
-namespace Simple.Net.DiagnosticService.Business
+namespace SimpleNet.DiagnosticService.Business
 {
     [Export]
     public class ConnectedDiagnosticClientCallbacks : DuplexServiceClientRepository<IDiagnosticsServiceCallback>, IPartImportsSatisfiedNotification , IDisposable

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Timers;
-using Simple.Net.Core.Diagnostics.Contracts;
+using SimpleNet.Diagnostics.Contracts;
 
-namespace Simple.Net.Core.Diagnostics.Loggers
+namespace SimpleNet.Diagnostics.Loggers
 {
     public abstract class AbstractDelayedLogWritter : AbstractLogWritter
     {

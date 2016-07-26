@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.Core.ServiceHost.Contracts", "Simple.Net.Core.ServiceHost.Contracts\Simple.Net.Core.ServiceHost.Contracts.csproj", "{881DC18E-F009-4E24-93B0-D6EFDE5759B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.ServiceHost.Contracts", "Simple.Net.Core.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj", "{881DC18E-F009-4E24-93B0-D6EFDE5759B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.Core.ServiceHost", "Simple.Net.Core.ServiceHost\Simple.Net.Core.ServiceHost.csproj", "{AC9CEEA8-9F50-4C66-9AF4-9A593385EACF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.ServiceHost", "Simple.Net.Core.ServiceHost\SimpleNet.ServiceHost.csproj", "{AC9CEEA8-9F50-4C66-9AF4-9A593385EACF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.Core.Diagnostics.Loggers", "Simple.Net.Core.Diagnostics.Loggers\Simple.Net.Core.Diagnostics.Loggers.csproj", "{B4E83CD6-10D4-45C0-B46B-6B556A8781C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Diagnostics.Loggers", "Simple.Net.Core.Diagnostics.Loggers\SimpleNet.Diagnostics.Loggers.csproj", "{B4E83CD6-10D4-45C0-B46B-6B556A8781C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.Core.Diagnostics", "Simple.Net.Core.Diagnostics\Simple.Net.Core.Diagnostics.csproj", "{BDF95AC5-1331-4BD7-848F-03319D274FAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Diagnostics", "Simple.Net.Core.Diagnostics\SimpleNet.Diagnostics.csproj", "{BDF95AC5-1331-4BD7-848F-03319D274FAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.DiagnosticService", "Simple.Net.DiagnosticService\Simple.Net.DiagnosticService.csproj", "{E1DA6EFF-29CD-4F1E-B2A5-395F303D94AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.DiagnosticService", "Simple.Net.DiagnosticService\SimpleNet.DiagnosticService.csproj", "{E1DA6EFF-29CD-4F1E-B2A5-395F303D94AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.DiagnosticService.Contracts", "Simple.Net.DiagnosticService.Contracts\Simple.Net.DiagnosticService.Contracts.csproj", "{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.DiagnosticService.Contracts", "Simple.Net.DiagnosticService.Contracts\SimpleNet.DiagnosticService.Contracts.csproj", "{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Net.Mef.Mvc", "Simple.Net.Mef.Mvc\Simple.Net.Mef.Mvc.csproj", "{8263B0FA-977D-4B2C-A778-0897D3D5E841}"
 EndProject
@@ -30,15 +30,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{54E37C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{45A2A794-D9B8-4EAA-A13D-AD02BA2C8A34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleService.Contracts", "SampleService.Contracts\SampleService.Contracts.csproj", "{B63F9E89-5A0F-4B75-917B-83F585D82169}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Sample.Contracts", "SampleService.Contracts\SimpleNet.Sample.Contracts.csproj", "{B63F9E89-5A0F-4B75-917B-83F585D82169}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleService.Impl", "SampleService.Impl\SampleService.Impl.csproj", "{C1BCE4A7-6473-442E-8DA1-526AFDE4DEF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Sample.Impl", "SampleService.Impl\SimpleNet.Sample.Impl.csproj", "{C1BCE4A7-6473-442E-8DA1-526AFDE4DEF9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC", "MVC", "{18C73FED-936F-4762-89B5-9DAD5C60AD10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleServiceConsoleApp", "SampleServiceConsoleApp\SampleServiceConsoleApp.csproj", "{E381F885-22F3-48DF-B09A-5F37FA241B18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Client.ConsoleApp", "SampleServiceConsoleApp\SimpleNet.Client.ConsoleApp.csproj", "{E381F885-22F3-48DF-B09A-5F37FA241B18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleServiceHost", "SampleServiceHost\SampleServiceHost.csproj", "{9421D08B-C937-4CF6-B693-16DE20CBDD00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Sample.ServiceHost", "SampleServiceHost\SimpleNet.Sample.ServiceHost.csproj", "{9421D08B-C937-4CF6-B693-16DE20CBDD00}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{FE339145-A82A-4851-96DD-F05809FA1C07}"
 EndProject
@@ -47,6 +47,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Data", "SimpleNet.Data\SimpleNet.Data.csproj", "{0237F2DA-FC39-4C8D-8EE3-8B3498BF7EEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Data.UnitTest", "SimpleNet.Data.UnitTest\SimpleNet.Data.UnitTest.csproj", "{6646A9B8-68C2-41DF-8966-789D50A8A919}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics", "Diagnostics", "{2C887952-F1B0-4FC2-8228-74DDD749C893}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,8 +117,8 @@ Global
 		{AC9CEEA8-9F50-4C66-9AF4-9A593385EACF} = {3EC48FE9-48B5-40F4-A8DB-3AE0F6271083}
 		{B4E83CD6-10D4-45C0-B46B-6B556A8781C8} = {3A9D92E5-9522-4C3E-9BAC-3AD26620E0DB}
 		{BDF95AC5-1331-4BD7-848F-03319D274FAB} = {3A9D92E5-9522-4C3E-9BAC-3AD26620E0DB}
-		{E1DA6EFF-29CD-4F1E-B2A5-395F303D94AE} = {FE339145-A82A-4851-96DD-F05809FA1C07}
-		{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8} = {FE339145-A82A-4851-96DD-F05809FA1C07}
+		{E1DA6EFF-29CD-4F1E-B2A5-395F303D94AE} = {2C887952-F1B0-4FC2-8228-74DDD749C893}
+		{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8} = {2C887952-F1B0-4FC2-8228-74DDD749C893}
 		{8263B0FA-977D-4B2C-A778-0897D3D5E841} = {18C73FED-936F-4762-89B5-9DAD5C60AD10}
 		{B63F9E89-5A0F-4B75-917B-83F585D82169} = {FE339145-A82A-4851-96DD-F05809FA1C07}
 		{C1BCE4A7-6473-442E-8DA1-526AFDE4DEF9} = {FE339145-A82A-4851-96DD-F05809FA1C07}
@@ -126,5 +128,6 @@ Global
 		{E48A934D-E5CB-4070-B714-DD653918E728} = {54E37CC5-A29A-40E9-961A-C72EF31CE314}
 		{0237F2DA-FC39-4C8D-8EE3-8B3498BF7EEF} = {45A2A794-D9B8-4EAA-A13D-AD02BA2C8A34}
 		{6646A9B8-68C2-41DF-8966-789D50A8A919} = {45A2A794-D9B8-4EAA-A13D-AD02BA2C8A34}
+		{2C887952-F1B0-4FC2-8228-74DDD749C893} = {54E37CC5-A29A-40E9-961A-C72EF31CE314}
 	EndGlobalSection
 EndGlobal

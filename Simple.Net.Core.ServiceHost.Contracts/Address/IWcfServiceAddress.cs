@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ServiceModel.Channels;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Address
+namespace SimpleNet.ServiceHost.Contracts.Address
 {
     public interface IWcfServiceAddress
     {

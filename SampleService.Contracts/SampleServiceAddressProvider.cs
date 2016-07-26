@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.Composition;
-using Simple.Net.Core.ServiceHost.Contracts.Address;
-using Simple.Net.Core.ServiceHost.Contracts.Bindings;
+using SimpleNet.ServiceHost.Contracts.Address;
+using SimpleNet.ServiceHost.Contracts.Bindings;
 
-namespace SampleService.Contracts
+namespace SimpleNet.Sample.Contracts
 {
     public class SampleServiceAddressProvider
     {

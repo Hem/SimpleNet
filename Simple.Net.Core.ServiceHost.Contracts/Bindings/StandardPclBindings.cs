@@ -2,7 +2,7 @@
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Bindings
+namespace SimpleNet.ServiceHost.Contracts.Bindings
 {
     public class StandardPclBindings
     {

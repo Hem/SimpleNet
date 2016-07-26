@@ -4,7 +4,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 
-namespace Simple.Net.Core.ServiceHost.Behaviors
+namespace SimpleNet.ServiceHost.Behaviors
 {
     public class ErrorBehavior : IServiceBehavior
     {

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.Composition;
-using Simple.Net.Core.ServiceHost.Contracts.Address;
-using Simple.Net.Core.ServiceHost.Contracts.Proxy;
+using SimpleNet.ServiceHost.Contracts.Address;
+using SimpleNet.ServiceHost.Contracts.Proxy;
 
-namespace SampleService.Contracts
+namespace SimpleNet.Sample.Contracts
 {
     [Export]
     public class SampleServiceProxy : WcfProxy<ISampleService>, ISampleService

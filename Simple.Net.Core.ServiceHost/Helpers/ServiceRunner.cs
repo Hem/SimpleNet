@@ -5,7 +5,7 @@ using System.Reflection;
 using System.ServiceProcess;
 using System.Threading;
 
-namespace Simple.Net.Core.ServiceHost.Helpers
+namespace SimpleNet.ServiceHost.Helpers
 {
     public static class ServiceRunner
     {

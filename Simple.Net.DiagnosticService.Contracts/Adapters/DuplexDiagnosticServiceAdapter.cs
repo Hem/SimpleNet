@@ -1,8 +1,8 @@
 ﻿using System;
-using Simple.Net.Core.ServiceHost.Contracts.Address;
-using Simple.Net.Core.ServiceHost.Contracts.Proxy;
+using SimpleNet.ServiceHost.Contracts.Address;
+using SimpleNet.ServiceHost.Contracts.Proxy;
 
-namespace Simple.Net.DiagnosticService.Contracts.Adapters
+namespace SimpleNet.DiagnosticService.Contracts.Adapters
 {
     public interface IDuplexDiagnosticServiceAdapter : IDiagnosticsService, IWcfProxyChannel
     {

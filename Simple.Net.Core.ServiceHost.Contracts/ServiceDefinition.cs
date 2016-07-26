@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IdentityModel.Selectors;
 using System.ServiceModel.Description;
-using Simple.Net.Core.ServiceHost.Contracts.Address;
+using SimpleNet.ServiceHost.Contracts.Address;
 
-namespace Simple.Net.Core.ServiceHost.Contracts
+namespace SimpleNet.ServiceHost.Contracts
 {
     public class ServiceDefinitionBase
     {

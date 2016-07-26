@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.ServiceModel.Configuration;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Helpers
+namespace SimpleNet.ServiceHost.Contracts.Helpers
 {
     /**
      * http://blogs.msdn.com/b/markgabarra/archive/2006/04/27/585607.aspx

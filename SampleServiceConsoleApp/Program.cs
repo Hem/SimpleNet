@@ -1,15 +1,15 @@
 ﻿using System;
 using System.ComponentModel.Composition.Hosting;
 using System.Reflection;
-using SampleService.Contracts;
-using Simple.Net.Core.Diagnostics;
-using Simple.Net.Core.ServiceHost.Contracts.Address;
-using Simple.Net.DiagnosticService.Contracts;
-using Simple.Net.DiagnosticService.Contracts.Adapters;
-using Simple.Net.DiagnosticService.Contracts.Address;
-using Simple.Net.DiagnosticService.Contracts.Callback;
+using SimpleNet.Diagnostics;
+using SimpleNet.DiagnosticService.Contracts;
+using SimpleNet.DiagnosticService.Contracts.Adapters;
+using SimpleNet.DiagnosticService.Contracts.Address;
+using SimpleNet.DiagnosticService.Contracts.Callback;
+using SimpleNet.Sample.Contracts;
+using SimpleNet.ServiceHost.Contracts.Address;
 
-namespace SampleServiceConsoleApp
+namespace SimpleNet.Client.ConsoleApp
 {
     class Program
     {

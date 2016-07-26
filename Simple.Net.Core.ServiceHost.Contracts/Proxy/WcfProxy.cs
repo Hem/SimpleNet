@@ -4,7 +4,7 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Proxy
+namespace SimpleNet.ServiceHost.Contracts.Proxy
 {
     
     public class WcfProxy<T> : IUpdateWcfProxyCredentials

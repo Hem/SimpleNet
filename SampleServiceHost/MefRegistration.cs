@@ -7,12 +7,11 @@ using System.IO;
 using System.Reflection;
 using Microsoft.Mef.CommonServiceLocator;
 using Microsoft.Practices.ServiceLocation;
-using Simple.Net.Core.Diagnostics;
-using Simple.Net.Core.Diagnostics.Loggers;
-using Simple.Net.DiagnosticService.Contracts.Address;
+using SimpleNet.Diagnostics;
+using SimpleNet.Diagnostics.Loggers;
+using SimpleNet.DiagnosticService.Contracts.Address;
 
-
-namespace SampleServiceHost
+namespace SimpleNet.Sample.ServiceHost
 {
     internal static class MefRegistration
     {

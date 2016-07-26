@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Messaging;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Helpers
+namespace SimpleNet.ServiceHost.Contracts.Helpers
 {
     public static class MsmqHelper
     {

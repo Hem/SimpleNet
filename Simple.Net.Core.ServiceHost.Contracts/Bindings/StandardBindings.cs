@@ -2,7 +2,7 @@
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Bindings
+namespace SimpleNet.ServiceHost.Contracts.Bindings
 {
     // TODO: Use security and encryption
     // http://www.felinesoft.com/blog/index.php/2014/02/securing-a-wcf-service-with-username-and-password-using-message-security-and-the-channel-factory-pattern/

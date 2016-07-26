@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using Simple.Net.Core.Diagnostics.Contracts;
+using SimpleNet.Diagnostics.Contracts;
 
-namespace Simple.Net.Core.Diagnostics.Loggers
+namespace SimpleNet.Diagnostics.Loggers
 {
     public class DelayedFileLogger : AbstractDelayedLogWritter
     {

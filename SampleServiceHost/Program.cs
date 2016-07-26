@@ -2,9 +2,9 @@
 using System.Reflection;
 using System.ServiceProcess;
 using Microsoft.Practices.ServiceLocation;
-using Simple.Net.Core.ServiceHost.Helpers;
+using SimpleNet.ServiceHost.Helpers;
 
-namespace SampleServiceHost
+namespace SimpleNet.Sample.ServiceHost
 {
     static class Program
     {

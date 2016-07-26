@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.Composition;
 using System.ServiceModel;
-using SampleService.Contracts;
-using Simple.Net.Core.Diagnostics;
+using SimpleNet.Diagnostics;
+using SimpleNet.Sample.Contracts;
 
-namespace SampleService.Impl
+namespace SimpleNet.Sample.Impl
 {
 
 

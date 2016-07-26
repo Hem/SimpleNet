@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Address
+namespace SimpleNet.ServiceHost.Contracts.Address
 {
     public class AppHostPortProvider
     {

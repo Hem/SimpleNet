@@ -2,7 +2,7 @@
 using System.ServiceModel.Activation;
 using Microsoft.Practices.ServiceLocation;
 
-namespace Simple.Net.Core.ServiceHost.IocServiceHost
+namespace SimpleNet.ServiceHost.IocServiceHost
 {
     // you can then modify the .svc file so that it uses it in the Factory attribute:
     // <% @ServiceHost Service="FooService" Factory="ComposedServiceHostFactory" %>

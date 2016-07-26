@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using SampleService.Contracts;
-using Simple.Net.Core.ServiceHost.Contracts;
-using Simple.Net.Core.ServiceHost.Contracts.Address;
+using SimpleNet.Sample.Contracts;
+using SimpleNet.ServiceHost.Contracts;
+using SimpleNet.ServiceHost.Contracts.Address;
 
-namespace SampleService.Impl
+namespace SimpleNet.Sample.Impl
 {
     [Export(typeof(IServiceDefinitionProvider))]
     public class ServiceDefinitionProvider : IServiceDefinitionProvider

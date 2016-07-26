@@ -1,7 +1,7 @@
 ﻿using System;
-using Simple.Net.Core.Diagnostics.Contracts;
+using SimpleNet.Diagnostics.Contracts;
 
-namespace Simple.Net.Core.Diagnostics
+namespace SimpleNet.Diagnostics
 {
 
     public delegate void LogMessage(LoggerLogLevel level, String logText);

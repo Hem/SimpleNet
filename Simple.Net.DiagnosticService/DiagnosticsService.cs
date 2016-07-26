@@ -1,11 +1,11 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.ServiceModel;
-using Simple.Net.Core.Diagnostics.Contracts;
-using Simple.Net.DiagnosticService.Business;
-using Simple.Net.DiagnosticService.Contracts;
+using SimpleNet.Diagnostics.Contracts;
+using SimpleNet.DiagnosticService.Business;
+using SimpleNet.DiagnosticService.Contracts;
 
-namespace Simple.Net.DiagnosticService
+namespace SimpleNet.DiagnosticService
 {
     [Export, PartCreationPolicy(CreationPolicy.NonShared)]
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple,

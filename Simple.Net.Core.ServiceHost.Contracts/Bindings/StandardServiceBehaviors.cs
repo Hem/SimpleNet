@@ -1,6 +1,6 @@
 using System.ServiceModel.Description;
 
-namespace Simple.Net.Core.ServiceHost.Contracts.Bindings
+namespace SimpleNet.ServiceHost.Contracts.Bindings
 {
     public class StandardServiceBehaviors
     {

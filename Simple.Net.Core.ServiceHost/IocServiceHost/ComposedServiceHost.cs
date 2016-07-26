@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.Practices.ServiceLocation;
-using Simple.Net.Core.ServiceHost.Behaviors;
+using SimpleNet.ServiceHost.Behaviors;
 
-namespace Simple.Net.Core.ServiceHost.IocServiceHost
+namespace SimpleNet.ServiceHost.IocServiceHost
 {
     [ExcludeFromCodeCoverage]
     public class ComposedServiceHost : System.ServiceModel.ServiceHost

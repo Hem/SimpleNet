@@ -4,13 +4,13 @@ using System.IdentityModel.Configuration;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using Microsoft.Practices.ServiceLocation;
-using Simple.Net.Core.Diagnostics;
-using Simple.Net.Core.ServiceHost.Contracts;
-using Simple.Net.Core.ServiceHost.Contracts.Bindings;
-using Simple.Net.Core.ServiceHost.IocServiceHost;
-using Simple.Net.Core.ServiceHost.Validators;
+using SimpleNet.Diagnostics;
+using SimpleNet.ServiceHost.Contracts;
+using SimpleNet.ServiceHost.Contracts.Bindings;
+using SimpleNet.ServiceHost.IocServiceHost;
+using SimpleNet.ServiceHost.Validators;
 
-namespace Simple.Net.Core.ServiceHost.Helpers
+namespace SimpleNet.ServiceHost.Helpers
 {
 
     // Read: http://leastprivilege.com/2012/07/16/wcf-and-identity-in-net-4-5-usernamepassword-authentication/

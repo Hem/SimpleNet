@@ -5,7 +5,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Dispatcher;
 using Microsoft.Practices.ServiceLocation;
 
-namespace Simple.Net.Core.ServiceHost.IocServiceHost
+namespace SimpleNet.ServiceHost.IocServiceHost
 {
     [ExcludeFromCodeCoverage]
     public class ComposedInstanceProvider : IInstanceProvider

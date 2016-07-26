@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.Composition;
 using Microsoft.Practices.ServiceLocation;
-using Simple.Net.Core.Diagnostics;
-using Simple.Net.Core.ServiceHost.Helpers;
+using SimpleNet.Diagnostics;
+using SimpleNet.ServiceHost.Helpers;
 
-namespace SampleServiceHost.Helper
+namespace SimpleNet.Sample.ServiceHost.Helper
 {
     [Export]
     public class MefServiceHostHelper : AbstractServiceHostHelper

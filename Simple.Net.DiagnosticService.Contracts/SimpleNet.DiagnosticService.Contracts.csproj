@@ -7,8 +7,8 @@
     <ProjectGuid>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Simple.Net.DiagnosticService.Contracts</RootNamespace>
-    <AssemblyName>Simple.Net.DiagnosticService.Contracts</AssemblyName>
+    <RootNamespace>SimpleNet.DiagnosticService.Contracts</RootNamespace>
+    <AssemblyName>SimpleNet.DiagnosticService.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,9 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\Simple.Net.Core.ServiceHost.Contracts.csproj">
+    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
       <Project>{881DC18E-F009-4E24-93B0-D6EFDE5759B6}</Project>
-      <Name>Simple.Net.Core.ServiceHost.Contracts</Name>
+      <Name>SimpleNet.ServiceHost.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

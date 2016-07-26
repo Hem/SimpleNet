@@ -2,10 +2,10 @@
 using System.ComponentModel.Composition;
 using System.ServiceProcess;
 using Microsoft.Practices.ServiceLocation;
-using SampleServiceHost.Helper;
-using Simple.Net.Core.Diagnostics;
+using SimpleNet.Diagnostics;
+using SimpleNet.Sample.ServiceHost.Helper;
 
-namespace SampleServiceHost
+namespace SimpleNet.Sample.ServiceHost
 {
     [Export]
     public partial class ServiceContainer : ServiceBase

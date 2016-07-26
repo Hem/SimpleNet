@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E1DA6EFF-29CD-4F1E-B2A5-395F303D94AE}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{E381F885-22F3-48DF-B09A-5F37FA241B18}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Simple.Net.DiagnosticService</RootNamespace>
-    <AssemblyName>Simple.Net.DiagnosticService</AssemblyName>
+    <RootNamespace>SimpleNet.Client.ConsoleApp</RootNamespace>
+    <AssemblyName>SimpleNet.Client.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,31 +35,40 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\ConnectedClientsRepository.cs" />
-    <Compile Include="Business\DuplexServiceClientRepository.cs" />
-    <Compile Include="DiagnosticsService.cs" />
+    <Compile Include="MefRegistration.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceDefinitionProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ReadMe.txt" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Simple.Net.Core.Diagnostics\Simple.Net.Core.Diagnostics.csproj">
+    <ProjectReference Include="..\Simple.Net.Core.Diagnostics.Loggers\SimpleNet.Diagnostics.Loggers.csproj">
+      <Project>{B4E83CD6-10D4-45C0-B46B-6B556A8781C8}</Project>
+      <Name>SimpleNet.Diagnostics.Loggers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.Net.Core.Diagnostics\SimpleNet.Diagnostics.csproj">
       <Project>{BDF95AC5-1331-4BD7-848F-03319D274FAB}</Project>
-      <Name>Simple.Net.Core.Diagnostics</Name>
+      <Name>SimpleNet.Diagnostics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\Simple.Net.Core.ServiceHost.Contracts.csproj">
-      <Project>{881DC18E-F009-4E24-93B0-D6EFDE5759B6}</Project>
-      <Name>Simple.Net.Core.ServiceHost.Contracts</Name>
+    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
+      <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
+      <Name>SimpleNet.ServiceHost.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\Simple.Net.DiagnosticService.Contracts.csproj">
+    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\SimpleNet.DiagnosticService.Contracts.csproj">
       <Project>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</Project>
-      <Name>Simple.Net.DiagnosticService.Contracts</Name>
+      <Name>SimpleNet.DiagnosticService.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleService.Contracts\SimpleNet.Sample.Contracts.csproj">
+      <Project>{B63F9E89-5A0F-4B75-917B-83F585D82169}</Project>
+      <Name>SimpleNet.Sample.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

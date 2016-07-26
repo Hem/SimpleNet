@@ -7,8 +7,8 @@
     <ProjectGuid>{9421D08B-C937-4CF6-B693-16DE20CBDD00}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleServiceHost</RootNamespace>
-    <AssemblyName>SampleServiceHost</AssemblyName>
+    <RootNamespace>SimpleNet.Sample.ServiceHost</RootNamespace>
+    <AssemblyName>SimpleNet.Sample.ServiceHost</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -70,37 +70,37 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Simple.Net.Core.Diagnostics.Loggers\Simple.Net.Core.Diagnostics.Loggers.csproj">
+    <ProjectReference Include="..\Simple.Net.Core.Diagnostics.Loggers\SimpleNet.Diagnostics.Loggers.csproj">
       <Project>{b4e83cd6-10d4-45c0-b46b-6b556a8781c8}</Project>
-      <Name>Simple.Net.Core.Diagnostics.Loggers</Name>
+      <Name>SimpleNet.Diagnostics.Loggers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.Core.Diagnostics\Simple.Net.Core.Diagnostics.csproj">
+    <ProjectReference Include="..\Simple.Net.Core.Diagnostics\SimpleNet.Diagnostics.csproj">
       <Project>{bdf95ac5-1331-4bd7-848f-03319d274fab}</Project>
-      <Name>Simple.Net.Core.Diagnostics</Name>
+      <Name>SimpleNet.Diagnostics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\Simple.Net.Core.ServiceHost.Contracts.csproj">
+    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
       <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
-      <Name>Simple.Net.Core.ServiceHost.Contracts</Name>
+      <Name>SimpleNet.ServiceHost.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.Core.ServiceHost\Simple.Net.Core.ServiceHost.csproj">
+    <ProjectReference Include="..\Simple.Net.Core.ServiceHost\SimpleNet.ServiceHost.csproj">
       <Project>{ac9ceea8-9f50-4c66-9af4-9a593385eacf}</Project>
-      <Name>Simple.Net.Core.ServiceHost</Name>
+      <Name>SimpleNet.ServiceHost</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\Simple.Net.DiagnosticService.Contracts.csproj">
+    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\SimpleNet.DiagnosticService.Contracts.csproj">
       <Project>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</Project>
-      <Name>Simple.Net.DiagnosticService.Contracts</Name>
+      <Name>SimpleNet.DiagnosticService.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.DiagnosticService\Simple.Net.DiagnosticService.csproj">
+    <ProjectReference Include="..\Simple.Net.DiagnosticService\SimpleNet.DiagnosticService.csproj">
       <Project>{e1da6eff-29cd-4f1e-b2a5-395f303d94ae}</Project>
-      <Name>Simple.Net.DiagnosticService</Name>
+      <Name>SimpleNet.DiagnosticService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SampleService.Contracts\SampleService.Contracts.csproj">
+    <ProjectReference Include="..\SampleService.Contracts\SimpleNet.Sample.Contracts.csproj">
       <Project>{b63f9e89-5a0f-4b75-917b-83f585d82169}</Project>
-      <Name>SampleService.Contracts</Name>
+      <Name>SimpleNet.Sample.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SampleService.Impl\SampleService.Impl.csproj">
+    <ProjectReference Include="..\SampleService.Impl\SimpleNet.Sample.Impl.csproj">
       <Project>{c1bce4a7-6473-442e-8da1-526afde4def9}</Project>
-      <Name>SampleService.Impl</Name>
+      <Name>SimpleNet.Sample.Impl</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

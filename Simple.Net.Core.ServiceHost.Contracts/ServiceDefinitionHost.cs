@@ -1,4 +1,4 @@
-namespace Simple.Net.Core.ServiceHost.Contracts
+namespace SimpleNet.ServiceHost.Contracts
 {
     public class ServiceDefinitionHost
     {

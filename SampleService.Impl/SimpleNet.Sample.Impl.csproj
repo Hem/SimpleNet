@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B63F9E89-5A0F-4B75-917B-83F585D82169}</ProjectGuid>
+    <ProjectGuid>{C1BCE4A7-6473-442E-8DA1-526AFDE4DEF9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleService.Contracts</RootNamespace>
-    <AssemblyName>SampleService.Contracts</AssemblyName>
+    <RootNamespace>SimpleNet.Sample.Impl</RootNamespace>
+    <AssemblyName>SimpleNet.Sample.Impl</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -37,16 +37,22 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISampleQueueService.cs" />
-    <Compile Include="ISampleService.cs" />
+    <Compile Include="SampleServiceOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleServiceAddressProvider.cs" />
-    <Compile Include="SampleServiceProxy.cs" />
+    <Compile Include="ServiceDefinitionProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\Simple.Net.Core.ServiceHost.Contracts.csproj">
-      <Project>{881DC18E-F009-4E24-93B0-D6EFDE5759B6}</Project>
-      <Name>Simple.Net.Core.ServiceHost.Contracts</Name>
+    <ProjectReference Include="..\Simple.Net.Core.Diagnostics\SimpleNet.Diagnostics.csproj">
+      <Project>{BDF95AC5-1331-4BD7-848F-03319D274FAB}</Project>
+      <Name>SimpleNet.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
+      <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
+      <Name>SimpleNet.ServiceHost.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleService.Contracts\SimpleNet.Sample.Contracts.csproj">
+      <Project>{B63F9E89-5A0F-4B75-917B-83F585D82169}</Project>
+      <Name>SimpleNet.Sample.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

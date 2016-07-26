@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 
-namespace Simple.Net.DiagnosticService.Business
+namespace SimpleNet.DiagnosticService.Business
 {
     public class DuplexServiceClientRepository<T>
     {

@@ -6,7 +6,7 @@ using System.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Xml;
 
-namespace Simple.Net.Core.ServiceHost.Validators
+namespace SimpleNet.ServiceHost.Validators
 {
     public class CustomUserNamePasswordValidatorSecurityTokenHandler : UserNameSecurityTokenHandler
     {

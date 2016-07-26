@@ -5,11 +5,11 @@ using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.IO;
 using System.Reflection;
-using Simple.Net.Core.Diagnostics;
-using Simple.Net.Core.Diagnostics.Loggers;
-using Simple.Net.DiagnosticService.Contracts.Address;
+using SimpleNet.Diagnostics;
+using SimpleNet.Diagnostics.Loggers;
+using SimpleNet.DiagnosticService.Contracts.Address;
 
-namespace SampleServiceConsoleApp
+namespace SimpleNet.Client.ConsoleApp
 {
     internal static class MefRegistration
     {
