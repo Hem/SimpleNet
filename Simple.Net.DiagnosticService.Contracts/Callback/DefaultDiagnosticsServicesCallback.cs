@@ -9,7 +9,7 @@
 
         protected virtual void OnMessageReceived( LogMessageDto message )
         {
-            DiagnosticMessage handler = MessageReceived;
+            var handler = MessageReceived;
             handler?.Invoke( message );
         }
 

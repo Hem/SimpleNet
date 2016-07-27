@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using Microsoft.Practices.ServiceLocation;
-using SimpleNet.Diagnostics;
+
 using SimpleNet.ServiceHost.Helpers;
 
 namespace SimpleNet.Sample.ServiceHost.Helper
@@ -10,9 +11,6 @@ namespace SimpleNet.Sample.ServiceHost.Helper
     public class MefServiceHostHelper : AbstractServiceHostHelper
     {
         private const string NAME = "SAMPLE SERVICE HOST";
-
-        [Import]
-        public Logger Logger { get; set; }
 
 
         [ImportingConstructor]
@@ -23,12 +21,15 @@ namespace SimpleNet.Sample.ServiceHost.Helper
 
         public override void LogInformation(string message)
         {
-            Logger.Info(message);
+            Trace.TraceInformation(message);
         }
 
         public override void LogError(string message, Exception ex)
         {
-            Logger.Error(message, ex);
+            // Logger.Error(message, ex);
+            Trace.TraceError(message);
+            Trace.TraceError(ex.Message);
+            Trace.TraceError(ex.Data.ToString());
         }
     }
 

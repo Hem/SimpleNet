@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.ServiceModel;
-using SimpleNet.Diagnostics;
 using SimpleNet.Sample.Contracts;
 
 namespace SimpleNet.Sample.Impl
@@ -13,12 +13,10 @@ namespace SimpleNet.Sample.Impl
     
     public class SampleServiceOperation : ISampleService
     {
-        [Import]
-        public Logger Logger { get; set; }
-
+        
         public string GetServiceName()
         {
-            Logger.Info("Loggin info from Sample Service => GetServiceName");
+            Trace.TraceInformation("Loggin info from Sample Service => GetServiceName");
 
             return "Hello World - Response from GetServiceName";
         }

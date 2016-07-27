@@ -61,10 +61,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Simple.Net.Core.Diagnostics\SimpleNet.Diagnostics.csproj">
-      <Project>{bdf95ac5-1331-4bd7-848f-03319d274fab}</Project>
-      <Name>SimpleNet.Diagnostics</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
       <Project>{881DC18E-F009-4E24-93B0-D6EFDE5759B6}</Project>
       <Name>SimpleNet.ServiceHost.Contracts</Name>

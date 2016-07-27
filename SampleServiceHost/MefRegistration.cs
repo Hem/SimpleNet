@@ -7,8 +7,6 @@ using System.IO;
 using System.Reflection;
 using Microsoft.Mef.CommonServiceLocator;
 using Microsoft.Practices.ServiceLocation;
-using SimpleNet.Diagnostics;
-using SimpleNet.Diagnostics.Loggers;
 using SimpleNet.DiagnosticService.Contracts.Address;
 
 namespace SimpleNet.Sample.ServiceHost
@@ -17,19 +15,16 @@ namespace SimpleNet.Sample.ServiceHost
     {
         internal static CompositionBatch GetCompositionBatch()
         {
-            const string diagnosticsAddress = @"net.tcp://localhost:6000/DiagnosticService.svc";
+            const string DIAGNOSTICS_ADDRESS = @"net.tcp://localhost:6000/DiagnosticService.svc";
 
             var batch = new CompositionBatch();
-            var logger = new Logger();
-
             
-            batch.AddExportedValue(logger);
-            batch.AddExportedValue(new ConsoleLogWritter(logger));
+            
 
-            if (!String.IsNullOrEmpty(diagnosticsAddress))
+            if (!string.IsNullOrEmpty(DIAGNOSTICS_ADDRESS))
             {
-                batch.AddExportedValue(DiagnosticsAddressProvider.DIAGNOSTICS_SERVICE_ADDRESS, diagnosticsAddress);
-                batch.AddExportedValue("DIAGNOSTICS_SHARED_SECRET", "secret");
+                batch.AddExportedValue(DiagnosticsAddressProvider.DIAGNOSTICS_SERVICE_ADDRESS, DIAGNOSTICS_ADDRESS);
+                batch.AddExportedValue("TRACE_BROADCAST_SHARED_SECRET", "secret");
 
             }
                 

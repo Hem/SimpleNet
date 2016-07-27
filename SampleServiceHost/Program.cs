@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Reflection;
 using System.ServiceProcess;
 using Microsoft.Practices.ServiceLocation;
@@ -11,6 +12,10 @@ namespace SimpleNet.Sample.ServiceHost
         
         static Program()
         {
+            // Yeah! in code!!
+            Trace.Listeners.Add(new ConsoleTraceListener());
+            
+
             var batch = MefRegistration.GetCompositionBatch();
 
             var locator = MefRegistration.GetServiceLocator(Assembly.GetExecutingAssembly(), batch);
@@ -23,6 +28,7 @@ namespace SimpleNet.Sample.ServiceHost
         /// </summary>
         static void Main()
         {
+
             var servicesToRun = new ServiceBase[] 
             { 
                 ServiceLocator.Current.GetInstance<ServiceContainer>()

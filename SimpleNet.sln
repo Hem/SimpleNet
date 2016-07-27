@@ -50,6 +50,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Data.UnitTest", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics", "Diagnostics", "{2C887952-F1B0-4FC2-8228-74DDD749C893}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.TraceBroadcastService", "SimpleNet.TraceBroadcastService\SimpleNet.TraceBroadcastService.csproj", "{4FCC556D-1910-42CA-AF1B-391CE6FD32D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +110,10 @@ Global
 		{6646A9B8-68C2-41DF-8966-789D50A8A919}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6646A9B8-68C2-41DF-8966-789D50A8A919}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6646A9B8-68C2-41DF-8966-789D50A8A919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FCC556D-1910-42CA-AF1B-391CE6FD32D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FCC556D-1910-42CA-AF1B-391CE6FD32D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FCC556D-1910-42CA-AF1B-391CE6FD32D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FCC556D-1910-42CA-AF1B-391CE6FD32D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,5 +135,6 @@ Global
 		{0237F2DA-FC39-4C8D-8EE3-8B3498BF7EEF} = {45A2A794-D9B8-4EAA-A13D-AD02BA2C8A34}
 		{6646A9B8-68C2-41DF-8966-789D50A8A919} = {45A2A794-D9B8-4EAA-A13D-AD02BA2C8A34}
 		{2C887952-F1B0-4FC2-8228-74DDD749C893} = {54E37CC5-A29A-40E9-961A-C72EF31CE314}
+		{4FCC556D-1910-42CA-AF1B-391CE6FD32D2} = {2C887952-F1B0-4FC2-8228-74DDD749C893}
 	EndGlobalSection
 EndGlobal
