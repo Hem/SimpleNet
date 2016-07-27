@@ -70,18 +70,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
-      <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
-      <Name>SimpleNet.ServiceHost.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.Core.ServiceHost\SimpleNet.ServiceHost.csproj">
-      <Project>{ac9ceea8-9f50-4c66-9af4-9a593385eacf}</Project>
-      <Name>SimpleNet.ServiceHost</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\SimpleNet.TraceBroadcastService.Contracts.csproj">
-      <Project>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</Project>
-      <Name>SimpleNet.TraceBroadcastService.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SampleService.Contracts\SimpleNet.Sample.Contracts.csproj">
       <Project>{b63f9e89-5a0f-4b75-917b-83f585d82169}</Project>
       <Name>SimpleNet.Sample.Contracts</Name>
@@ -89,6 +77,18 @@
     <ProjectReference Include="..\SampleService.Impl\SimpleNet.Sample.Impl.csproj">
       <Project>{c1bce4a7-6473-442e-8da1-526afde4def9}</Project>
       <Name>SimpleNet.Sample.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleNet.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
+      <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
+      <Name>SimpleNet.ServiceHost.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleNet.ServiceHost\SimpleNet.ServiceHost.csproj">
+      <Project>{ac9ceea8-9f50-4c66-9af4-9a593385eacf}</Project>
+      <Name>SimpleNet.ServiceHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleNet.TraceBroadcastService.Contracts\SimpleNet.TraceBroadcastService.Contracts.csproj">
+      <Project>{ef7894f2-2a64-44d4-80a9-d363bc6cb4b8}</Project>
+      <Name>SimpleNet.TraceBroadcastService.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleNet.TraceBroadcastService\SimpleNet.TraceBroadcastService.csproj">
       <Project>{4fcc556d-1910-42ca-af1b-391ce6fd32d2}</Project>

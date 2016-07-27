@@ -50,17 +50,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
-      <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
-      <Name>SimpleNet.ServiceHost.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\SimpleNet.TraceBroadcastService.Contracts.csproj">
-      <Project>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</Project>
-      <Name>SimpleNet.TraceBroadcastService.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SampleService.Contracts\SimpleNet.Sample.Contracts.csproj">
       <Project>{B63F9E89-5A0F-4B75-917B-83F585D82169}</Project>
       <Name>SimpleNet.Sample.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleNet.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
+      <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
+      <Name>SimpleNet.ServiceHost.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleNet.TraceBroadcastService.Contracts\SimpleNet.TraceBroadcastService.Contracts.csproj">
+      <Project>{ef7894f2-2a64-44d4-80a9-d363bc6cb4b8}</Project>
+      <Name>SimpleNet.TraceBroadcastService.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
