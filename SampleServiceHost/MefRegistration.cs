@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
@@ -7,9 +6,9 @@ using System.IO;
 using System.Reflection;
 using Microsoft.Mef.CommonServiceLocator;
 using Microsoft.Practices.ServiceLocation;
-using SimpleNet.DiagnosticService.Contracts.Address;
+using SimpleNet.TraceBroadcastService.Contracts.Address;
 
-namespace SimpleNet.Sample.ServiceHost
+namespace SimpleNet.Sample.ServiceHostApp
 {
     internal static class MefRegistration
     {

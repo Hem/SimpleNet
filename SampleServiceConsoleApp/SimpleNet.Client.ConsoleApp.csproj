@@ -54,9 +54,9 @@
       <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
       <Name>SimpleNet.ServiceHost.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\SimpleNet.DiagnosticService.Contracts.csproj">
+    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\SimpleNet.TraceBroadcastService.Contracts.csproj">
       <Project>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</Project>
-      <Name>SimpleNet.DiagnosticService.Contracts</Name>
+      <Name>SimpleNet.TraceBroadcastService.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleService.Contracts\SimpleNet.Sample.Contracts.csproj">
       <Project>{B63F9E89-5A0F-4B75-917B-83F585D82169}</Project>

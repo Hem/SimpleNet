@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
-using SimpleNet.DiagnosticService.Contracts;
-using SimpleNet.DiagnosticService.Contracts.Address;
 using SimpleNet.ServiceHost.Contracts;
 using SimpleNet.ServiceHost.Contracts.Address;
+using SimpleNet.TraceBroadcastService.Contracts;
+using SimpleNet.TraceBroadcastService.Contracts.Address;
 using SimpleNet.TraceBroadcastService.TraceListeners;
 
 namespace SimpleNet.TraceBroadcastService

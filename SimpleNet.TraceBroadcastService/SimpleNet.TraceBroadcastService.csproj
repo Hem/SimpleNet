@@ -58,9 +58,9 @@
       <Project>{881DC18E-F009-4E24-93B0-D6EFDE5759B6}</Project>
       <Name>SimpleNet.ServiceHost.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\SimpleNet.DiagnosticService.Contracts.csproj">
+    <ProjectReference Include="..\Simple.Net.DiagnosticService.Contracts\SimpleNet.TraceBroadcastService.Contracts.csproj">
       <Project>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</Project>
-      <Name>SimpleNet.DiagnosticService.Contracts</Name>
+      <Name>SimpleNet.TraceBroadcastService.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

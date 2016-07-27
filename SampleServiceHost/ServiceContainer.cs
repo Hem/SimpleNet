@@ -3,9 +3,9 @@ using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.ServiceProcess;
 using Microsoft.Practices.ServiceLocation;
-using SimpleNet.Sample.ServiceHost.Helper;
+using SimpleNet.Sample.ServiceHostApp.Helper;
 
-namespace SimpleNet.Sample.ServiceHost
+namespace SimpleNet.Sample.ServiceHostApp
 {
     [Export]
     public partial class ServiceContainer : ServiceBase

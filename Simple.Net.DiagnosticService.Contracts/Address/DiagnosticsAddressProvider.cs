@@ -4,7 +4,7 @@ using System.ServiceModel;
 using SimpleNet.ServiceHost.Contracts.Address;
 using SimpleNet.ServiceHost.Contracts.Bindings;
 
-namespace SimpleNet.DiagnosticService.Contracts.Address
+namespace SimpleNet.TraceBroadcastService.Contracts.Address
 {
     public class DiagnosticsAddressProvider
     {

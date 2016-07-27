@@ -5,7 +5,7 @@ using System.ServiceProcess;
 using Microsoft.Practices.ServiceLocation;
 using SimpleNet.ServiceHost.Helpers;
 
-namespace SimpleNet.Sample.ServiceHost
+namespace SimpleNet.Sample.ServiceHostApp
 {
     static class Program
     {

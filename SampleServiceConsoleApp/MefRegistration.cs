@@ -4,7 +4,7 @@ using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.IO;
 using System.Reflection;
-using SimpleNet.DiagnosticService.Contracts.Address;
+using SimpleNet.TraceBroadcastService.Contracts.Address;
 
 namespace SimpleNet.Client.ConsoleApp
 {

@@ -2,7 +2,7 @@
 using SimpleNet.ServiceHost.Contracts.Address;
 using SimpleNet.ServiceHost.Contracts.Proxy;
 
-namespace SimpleNet.DiagnosticService.Contracts.Adapters
+namespace SimpleNet.TraceBroadcastService.Contracts.Adapters
 {
     public interface IDuplexDiagnosticServiceAdapter : IDiagnosticsService, IWcfProxyChannel
     {

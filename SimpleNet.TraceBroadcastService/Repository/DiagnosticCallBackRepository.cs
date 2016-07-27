@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.Composition;
-using SimpleNet.DiagnosticService.Contracts;
+using SimpleNet.TraceBroadcastService.Contracts;
 
 namespace SimpleNet.TraceBroadcastService.Repository
 {

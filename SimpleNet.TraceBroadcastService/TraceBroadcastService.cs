@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.ServiceModel;
-using SimpleNet.DiagnosticService.Contracts;
+using SimpleNet.TraceBroadcastService.Contracts;
 using SimpleNet.TraceBroadcastService.Repository;
 
 namespace SimpleNet.TraceBroadcastService

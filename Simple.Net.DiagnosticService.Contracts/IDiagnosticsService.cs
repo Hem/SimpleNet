@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ServiceModel;
 
-namespace SimpleNet.DiagnosticService.Contracts
+namespace SimpleNet.TraceBroadcastService.Contracts
 {
     [ServiceContract(CallbackContract = typeof(IDiagnosticsServiceCallback))]
     public interface IDiagnosticsService

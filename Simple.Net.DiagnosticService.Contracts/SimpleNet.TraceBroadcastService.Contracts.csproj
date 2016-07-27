@@ -7,8 +7,8 @@
     <ProjectGuid>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleNet.DiagnosticService.Contracts</RootNamespace>
-    <AssemblyName>SimpleNet.DiagnosticService.Contracts</AssemblyName>
+    <RootNamespace>SimpleNet.TraceBroadcastService.Contracts</RootNamespace>
+    <AssemblyName>SimpleNet.TraceBroadcastService.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

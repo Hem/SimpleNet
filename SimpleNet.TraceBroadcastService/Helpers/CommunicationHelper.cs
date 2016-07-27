@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel;
 
-namespace SimpleNet.TraceBroadcastService.Repository
+namespace SimpleNet.TraceBroadcastService.Helpers
 {
     public static class CommunicationHelper
     {

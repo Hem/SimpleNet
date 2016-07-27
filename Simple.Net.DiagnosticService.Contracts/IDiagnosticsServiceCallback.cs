@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel;
 
-namespace SimpleNet.DiagnosticService.Contracts
+namespace SimpleNet.TraceBroadcastService.Contracts
 {
     [ServiceContract]
     public interface IDiagnosticsServiceCallback

@@ -2,10 +2,9 @@
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using Microsoft.Practices.ServiceLocation;
-
 using SimpleNet.ServiceHost.Helpers;
 
-namespace SimpleNet.Sample.ServiceHost.Helper
+namespace SimpleNet.Sample.ServiceHostApp.Helper
 {
     [Export]
     public class MefServiceHostHelper : AbstractServiceHostHelper
