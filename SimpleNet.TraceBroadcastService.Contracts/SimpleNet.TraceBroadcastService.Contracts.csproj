@@ -7,8 +7,8 @@
     <ProjectGuid>{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleNet.DiagnosticService.Contracts</RootNamespace>
-    <AssemblyName>SimpleNet.DiagnosticService.Contracts</AssemblyName>
+    <RootNamespace>SimpleNet.TraceBroadcastService.Contracts</RootNamespace>
+    <AssemblyName>SimpleNet.TraceBroadcastService.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,8 +46,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Simple.Net.Core.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
-      <Project>{881DC18E-F009-4E24-93B0-D6EFDE5759B6}</Project>
+    <ProjectReference Include="..\SimpleNet.ServiceHost.Contracts\SimpleNet.ServiceHost.Contracts.csproj">
+      <Project>{881dc18e-f009-4e24-93b0-d6efde5759b6}</Project>
       <Name>SimpleNet.ServiceHost.Contracts</Name>
     </ProjectReference>
   </ItemGroup>

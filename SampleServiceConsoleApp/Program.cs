@@ -1,13 +1,12 @@
 ﻿using System;
 using System.ComponentModel.Composition.Hosting;
 using System.Reflection;
-using SimpleNet.Diagnostics;
-using SimpleNet.DiagnosticService.Contracts;
-using SimpleNet.DiagnosticService.Contracts.Adapters;
-using SimpleNet.DiagnosticService.Contracts.Address;
-using SimpleNet.DiagnosticService.Contracts.Callback;
 using SimpleNet.Sample.Contracts;
 using SimpleNet.ServiceHost.Contracts.Address;
+using SimpleNet.TraceBroadcastService.Contracts;
+using SimpleNet.TraceBroadcastService.Contracts.Adapters;
+using SimpleNet.TraceBroadcastService.Contracts.Address;
+using SimpleNet.TraceBroadcastService.Contracts.Callback;
 
 namespace SimpleNet.Client.ConsoleApp
 {
@@ -35,7 +34,7 @@ namespace SimpleNet.Client.ConsoleApp
             var serviceAddress =
                 Container.GetExportedValue<IWcfServiceAddress>(DiagnosticsAddressProvider.DIAGNOSTICS_SERVICE_ADDRESS);
 
-            var logger = Container.GetExportedValue<Logger>();
+            
             var sampleService = Container.GetExportedValue<SampleServiceProxy>();
 
             var duplexCcasAdapter = new DuplexDiagnosticServiceAdapter(serviceAddress, callback);

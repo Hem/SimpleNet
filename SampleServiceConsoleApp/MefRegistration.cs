@@ -1,13 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.IO;
 using System.Reflection;
-using SimpleNet.Diagnostics;
-using SimpleNet.Diagnostics.Loggers;
-using SimpleNet.DiagnosticService.Contracts.Address;
+using SimpleNet.TraceBroadcastService.Contracts.Address;
 
 namespace SimpleNet.Client.ConsoleApp
 {
@@ -15,18 +12,14 @@ namespace SimpleNet.Client.ConsoleApp
     {
         internal static CompositionBatch GetCompositionBatch()
         {
-            const string diagnosticsAddress = @"net.tcp://localhost:6000/DiagnosticService.svc";
+            const string DIAGNOSTICS_ADDRESS = @"net.tcp://localhost:6000/DiagnosticService.svc";
 
             var batch = new CompositionBatch();
-            var logger = new Logger();
-
-
-            batch.AddExportedValue(logger);
-            batch.AddExportedValue(new ConsoleLogWritter(logger));
             
-            if (!String.IsNullOrEmpty(diagnosticsAddress))
-                batch.AddExportedValue(DiagnosticsAddressProvider.DIAGNOSTICS_SERVICE_ADDRESS, diagnosticsAddress);
-            batch.AddExportedValue("DIAGNOSTICS_SHARED_SECRET", "secret");
+            if (!string.IsNullOrEmpty(DIAGNOSTICS_ADDRESS))
+                batch.AddExportedValue(DiagnosticsAddressProvider.DIAGNOSTICS_SERVICE_ADDRESS, DIAGNOSTICS_ADDRESS);
+
+            batch.AddExportedValue("TRACE_BROADCAST_SHARED_SECRET", "secret");
 
             return batch;
         }

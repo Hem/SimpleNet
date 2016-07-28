@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimpleNet.DiagnosticService.Contracts
+namespace SimpleNet.TraceBroadcastService.Contracts
 {
     public class LogMessageDto
     {

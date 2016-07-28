@@ -1,4 +1,4 @@
-﻿namespace SimpleNet.Sample.ServiceHost
+﻿namespace SimpleNet.Sample.ServiceHostApp
 {
     partial class ServiceContainer
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            this.ServiceName = "SimpleNet Service Container";
         }
 
         #endregion

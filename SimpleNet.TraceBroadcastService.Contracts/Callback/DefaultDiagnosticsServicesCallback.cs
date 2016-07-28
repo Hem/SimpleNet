@@ -1,4 +1,4 @@
-﻿namespace SimpleNet.DiagnosticService.Contracts.Callback
+﻿namespace SimpleNet.TraceBroadcastService.Contracts.Callback
 {
 
     public delegate void DiagnosticMessage( LogMessageDto message );
@@ -9,7 +9,7 @@
 
         protected virtual void OnMessageReceived( LogMessageDto message )
         {
-            DiagnosticMessage handler = MessageReceived;
+            var handler = MessageReceived;
             handler?.Invoke( message );
         }
 

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("com.HemTalreja.ServiceHost.Contracts")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("com.HemTalreja.ServiceHost")]
+[assembly: AssemblyDescription("Abstract windows service host that provides pluggable WCF capabilities")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("com.HemTalreja.ServiceHost.Contracts")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCompany("Hem Talreja")]
+[assembly: AssemblyProduct("SimpleNet.ServiceHost")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("37a64627-1c28-41d7-82c0-756fc2a44e98")]
+[assembly: Guid("45cecb80-b901-4573-ba73-4cee26cc0943")]
 
 // Version information for an assembly consists of the following four values:
 //
