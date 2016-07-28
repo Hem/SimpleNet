@@ -5,6 +5,7 @@ Your process does not have access rights to this namespace
 netsh http add urlacl url=http://+:80/ user=EVERYONE
 
 
+
 The service endpoint failed to listen on the URI 'net.tcp://localhost:6000/DiagnosticService.svc' 
 because access was denied.  Verify that the current user is granted access in the appropriate allowAccounts 
 section of SMSvcHost.exe.config.

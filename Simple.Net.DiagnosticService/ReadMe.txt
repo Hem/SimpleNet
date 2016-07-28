@@ -8,9 +8,16 @@
 2. Add to your config file (please update the tcp port and service url)
 	<add key="DIAGNOSTICS_SERVICE_ADDRESS" value="net.tcp://localhost:6000/DiagnosticService.svc" />
 
-	
+	RUN VS AS ADMINISTRATOR!!!
+
+	netsh tcp add urlacl url=net.tcp://+:6000/ user=Everyone
 	// C:\>netsh http add urlacl url=http://+:6000/ user=Everyone
 	// C:\>sc.exe config NetTcpPortSharing start= demand
+
+	netsh advfirewall firewall add portopening TCP 6000 "NetBIOS TCP Port 6000"
+	netsh advfirewall firewall add rule name="NetBIOS TCP Port 6000" dir=in action=allow protocol=TCP localport=6000
+	netsh advfirewall firewall add rule name="NetBIOS TCP Port 600" dir=out action=allow protocol=TCP localport=6000
+
 
 
 3. Following code is needed to be added to your CompositionContainer
