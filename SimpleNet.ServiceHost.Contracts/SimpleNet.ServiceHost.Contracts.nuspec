@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package >
+
+  <!--
+  - Please download Nuget.exe and run...
+  - nuget pack SimpleNet.ServiceHost.Contracts.csproj -Prop Configuration=Release
+  -->
+  
+  <metadata>
+    <id>SimpleNet.ServiceHost.Contracts.dll</id>
+    <version>1.0.0</version>
+    <authors>Hem Talreja</authors>
+    <owners>Hem Talreja</owners>
+	<title>SimpleNet ServiceHost Contracts</title>
+    <licenseUrl>https://github.com/Hem/SimpleNet</licenseUrl>
+    <projectUrl>https://github.com/Hem/SimpleNet</projectUrl>
+    <iconUrl>https://github.com/Hem/SimpleNet</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Basic contracts that are needed for SimpleNet.ServiceHost to start pluggable Windows Services
+	  - Provides Interfaces and Binding Defaults for making WCF calls using HTTP, TCP, MSMQ bindings.
+	  - Provides the Proxy layer to "Invoke" these services so you do not have to create "ServiceReferences" 
+		in your application
+    </description>
+	<summary>
+		Basic contracts that are needed for SimpleNet.ServiceHost to start and access pluggable Windows Services
+	</summary>
+    <releaseNotes>
+        1.0.0 : Initial set of interface and abstract classes
+    </releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Windows Services  WCF Backend Processes</tags>
+  </metadata>
+</package>

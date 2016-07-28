@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("com.HemTalreja.ServiceHost.Contracts")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("SimpleNet ServiceHost Contracts")]
+[assembly: AssemblyDescription("SimpleNet contracts for Hosting Pluggable Windows Services, WCF, Backend Processes")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("com.HemTalreja.ServiceHost.Contracts")]
+[assembly: AssemblyCompany("HemTalreja")]
+[assembly: AssemblyProduct("SimpleNet.ServiceHost.Contracts")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

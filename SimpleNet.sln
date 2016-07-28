@@ -38,6 +38,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.TraceBroadcastSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.TraceBroadcastService", "SimpleNet.TraceBroadcastService\SimpleNet.TraceBroadcastService.csproj", "{4FCC556D-1910-42CA-AF1B-391CE6FD32D2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimedJobs", "TimedJobs", "{DD7C47FA-9E59-48D8-87B1-B137630159D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNet.Jobs", "SimpleNet.Jobs\SimpleNet.Jobs.csproj", "{8D3D009E-CEE2-4E44-8F5E-B839A28E207B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +84,10 @@ Global
 		{4FCC556D-1910-42CA-AF1B-391CE6FD32D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FCC556D-1910-42CA-AF1B-391CE6FD32D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FCC556D-1910-42CA-AF1B-391CE6FD32D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D3D009E-CEE2-4E44-8F5E-B839A28E207B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D3D009E-CEE2-4E44-8F5E-B839A28E207B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D3D009E-CEE2-4E44-8F5E-B839A28E207B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D3D009E-CEE2-4E44-8F5E-B839A28E207B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,5 +105,6 @@ Global
 		{AC9CEEA8-9F50-4C66-9AF4-9A593385EACF} = {3EC48FE9-48B5-40F4-A8DB-3AE0F6271083}
 		{EF7894F2-2A64-44D4-80A9-D363BC6CB4B8} = {2C887952-F1B0-4FC2-8228-74DDD749C893}
 		{4FCC556D-1910-42CA-AF1B-391CE6FD32D2} = {2C887952-F1B0-4FC2-8228-74DDD749C893}
+		{8D3D009E-CEE2-4E44-8F5E-B839A28E207B} = {DD7C47FA-9E59-48D8-87B1-B137630159D3}
 	EndGlobalSection
 EndGlobal

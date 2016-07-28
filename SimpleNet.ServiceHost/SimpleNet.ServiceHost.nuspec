@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package >
+  <!--
+  - Please download Nuget.exe and run...
+  - nuget pack SimpleNet.ServiceHost.csproj -Prop Configuration=Release
+  -->
+  
+  <metadata>
+    <id>SimpleNet.ServiceHost.dll</id>
+    <version>1.0.0</version>
+    <authors>Hem Talreja</authors>
+    <owners>Hem Talreja</owners>
+    <licenseUrl>https://github.com/Hem/SimpleNet</licenseUrl>
+    <projectUrl>https://github.com/Hem/SimpleNet</projectUrl>
+    <iconUrl>https://github.com/Hem/SimpleNet</iconUrl>
+	<requireLicenseAcceptance>false</requireLicenseAcceptance>
+	
+	<summary>
+		Config free pluggable Windows Services Framework for hosting WCF services
+	</summary>
+    
+	<description>
+		Config free pluggable Windows Services Framework for hosting WCF services
+		- HTTP Binding
+		- MSMQ Binding
+		- TCP Binding
+		- Duplex TCP Binding
+		- Self Contained Backend Processes
+	</description>
+	
+    <releaseNotes>
+		1.0.0 : Initial Extension and abstraction of Windows Services
+	</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Windows Services ServiceHost WCF</tags>
+    <dependencies>
+      <dependency id="SimpleNet.ServiceHost.Contracts.dll" version="1.0" />
+	  <dependency id="CommonServiceLocator" version="1.3" />
+    </dependencies>
+  </metadata>
+</package>

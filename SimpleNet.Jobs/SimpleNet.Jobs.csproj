@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{881DC18E-F009-4E24-93B0-D6EFDE5759B6}</ProjectGuid>
+    <ProjectGuid>{8D3D009E-CEE2-4E44-8F5E-B839A28E207B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleNet.ServiceHost.Contracts</RootNamespace>
-    <AssemblyName>SimpleNet.ServiceHost.Contracts</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>SimpleNet.Jobs</RootNamespace>
+    <AssemblyName>SimpleNet.Jobs</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -31,36 +31,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IdentityModel" />
-    <Reference Include="System.Messaging" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address\AppHostPortProvider.cs" />
-    <Compile Include="Address\IWcfServiceAddress.cs" />
-    <Compile Include="Address\WcfServiceAddress.cs" />
-    <Compile Include="Bindings\StandardBindings.cs" />
-    <Compile Include="Bindings\StandardPclBindings.cs" />
-    <Compile Include="Bindings\StandardServiceBehaviors.cs" />
-    <Compile Include="Helpers\BindingHelper.cs" />
-    <Compile Include="Helpers\MsmqHelper.cs" />
-    <Compile Include="ISelfContainedHost.cs" />
-    <Compile Include="IServiceDefinitionProvider.cs" />
+    <Compile Include="JobRunner.cs" />
+    <Compile Include="Dtos\SimpleJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proxy\DuplexWcfProxy.cs" />
-    <Compile Include="Proxy\IUpdateWcfProxyCredentials.cs" />
-    <Compile Include="Proxy\WcfProxy.cs" />
-    <Compile Include="ServiceDefinition.cs" />
-    <Compile Include="ServiceDefinitionHost.cs" />
-    <Compile Include="ServiceStatus.cs" />
-    <Compile Include="ServiceType.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="SimpleNet.ServiceHost.Contracts.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

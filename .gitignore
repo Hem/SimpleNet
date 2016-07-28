@@ -210,3 +210,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/SimpleNet.ServiceHost.Contracts/nuget.exe
+/SimpleNet.ServiceHost/nuget.exe
+
