@@ -27,6 +27,14 @@ namespace SimpleNet.Sample.Impl
                 EnableSecurity = false,
                 ServiceAddress = ServiceAddress
             };
+
+
+            yield return new SelfContainerServiceDefinition
+            {
+                ServiceType = ServiceTypeDefinition.SelfContainedHost,
+                ServiceContractName = BackgroundTaskService.NAME,
+                ServiceDescription = "Background Tasks"
+            };
         }
     }
 }
