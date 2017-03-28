@@ -9,7 +9,9 @@ A config free pluggable implementation of Windows services/WCF/Background proces
 > * Alternatively you can open ports using netsh
 
 
+### Run as Administrator in a command prompt
 ```
+	sc.exe config NetTcpPortSharing start= demand
     netsh http add urlacl url=http://+:80/ user=EVERYONE
 ```
 
